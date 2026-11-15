@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}预算{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">账单周期预算</p><h1>预算</h1><p class="muted">每月 13 日至次月 12 日为一期；一级项目预算构成总预算，子项目单独设限。</p></div><a class="button" href="{{ url_for('category_manage') }}">管理项目与预算</a></div>
+<section class="card"><form class="inline-form" method="get"><label>账单周期起始月<input type="month" name="month" value="{{ month }}"></label><button type="submit">查看</button></form><p class="muted">{{ period }}</p><div class="summary-line"><div><span>总预算</span><strong>{{ total_budget|money }}</strong></div><div><span>已消费</span><strong>{{ total_spent|money }}</strong></div><div><span>剩余</span><strong class="{{ 'danger' if total_budget-total_spent < 0 else 'good' }}">{{ (total_budget-total_spent)|money }}</strong></div></div></section>
+<section class="card"><h2>项目预算</h2>{% if entries %}<div class="table-wrap"><table><thead><tr><th>项目</th><th>本期预算</th><th>消费（含子项目）</th><th>剩余</th></tr></thead><tbody>{% for item in entries %}<tr><td>{{ '　' * item.category.depth }}{{ item.category.name }}</td><td>{{ item.budget|money }}</td><td>{{ item.spent|money }}</td><td class="{{ 'danger' if item.remaining < 0 else 'good' }}">{{ item.remaining|money }}</td></tr>{% endfor %}</tbody></table></div>{% else %}<div class="empty">尚无消费项目。</div>{% endif %}</section>
+<p class="fine-print">调整预算从当前账单周期生效，既往周期保留原预算；同一周期内再次调整会更新本期预算。</p>
+{% endblock %}

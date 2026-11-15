@@ -1,0 +1,8 @@
+[Unit]
+Description=Renew ledger.titanyung.top HTTPS certificate
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/ledger-system/deploy/renew_cert.sh

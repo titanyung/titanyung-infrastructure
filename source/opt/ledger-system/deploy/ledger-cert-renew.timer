@@ -1,0 +1,11 @@
+[Unit]
+Description=Daily ledger.titanyung.top HTTPS certificate renewal check
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=4h
+Persistent=true
+Unit=ledger-cert-renew.service
+
+[Install]
+WantedBy=timers.target

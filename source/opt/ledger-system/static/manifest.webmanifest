@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "Ledger 账单系统",
+  "short_name": "Ledger",
+  "description": "个人账单与预算管理",
+  "start_url": "/login",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#071322",
+  "theme_color": "#071322",
+  "prefer_related_applications": false,
+  "icons": [
+    {"src": "/static/ledger-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/static/ledger-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

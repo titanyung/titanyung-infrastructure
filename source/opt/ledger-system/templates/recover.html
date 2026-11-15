@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}恢复登录{% endblock %}
+{% block content %}
+<section class="auth-card card">
+  <p class="eyebrow">登录保护</p>
+  {% if stage == 'verify' %}
+  <h1>密码连续输错 3 次</h1>
+  <p class="muted">先使用已绑定的验证器确认身份，再选择重试密码或重设密码。</p>
+  <form method="post" class="stack">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>六位验证器代码<input name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required autofocus></label>
+    <button class="primary" type="submit">验证身份</button>
+  </form>
+  {% else %}
+  <h1>选择恢复方式</h1>
+  <form method="post" class="stack">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button type="submit" name="action" value="retry">继续尝试原密码</button>
+  </form>
+  <hr>
+  <form method="post" class="stack">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>新密码（至少 10 位）<input name="password" type="password" minlength="10" autocomplete="new-password"></label>
+    <label>再次输入新密码<input name="confirm" type="password" minlength="10" autocomplete="new-password"></label>
+    <button class="primary" type="submit" name="action" value="reset">重设密码</button>
+  </form>
+  {% endif %}
+</section>
+{% endblock %}

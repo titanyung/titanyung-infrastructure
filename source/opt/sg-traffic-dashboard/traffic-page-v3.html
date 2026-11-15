@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>统一流量与访问中心</title>
+<style>
+:root{--bg:#071320;--panel:#101f33;--panel2:#0c192a;--line:#29405d;--text:#edf5ff;--muted:#9bb0c9;--blue:#5aa0ff;--green:#35d8c5;--pink:#f478a2;--amber:#f8bd59}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,#143357 0,transparent 30%),var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:1660px;margin:auto;padding:28px}header{display:flex;align-items:flex-start;justify-content:flex-end;gap:16px;margin-bottom:20px}h2{font-size:18px;margin:0 0 14px}h3{font-size:15px;margin:0}.muted{color:var(--muted)}.status{white-space:nowrap;border:1px solid #207c72;border-radius:999px;padding:7px 12px;background:#0e3034;color:var(--green)}
+.summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card,.panel,.server-card{background:linear-gradient(150deg,#13233a,#0c1a2b);border:1px solid var(--line);border-radius:16px}.card{padding:18px}.card .value{font-size:25px;font-weight:750;color:var(--green);margin-top:5px}.card:nth-child(2) .value{color:var(--blue)}.card:nth-child(3) .value{color:var(--pink)}.card:nth-child(4) .value{color:var(--amber)}.card small{display:block;color:var(--muted)}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:25px 0 12px}.section-head h2{margin:0}.server-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}.server-card{padding:17px;min-width:0}.server-title{display:flex;align-items:center;justify-content:space-between;gap:10px}.ok{color:var(--green)}.off{color:var(--amber)}.bytes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.metric{padding:10px;background:#0a1728;border-radius:10px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{font-size:18px;font-variant-numeric:tabular-nums}.split{border-top:1px solid var(--line);padding-top:9px}.split-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 0}.split-row span:last-child{font-variant-numeric:tabular-nums}.info{font-size:11px;font-weight:800;border:1px solid var(--amber);color:var(--amber);background:transparent;border-radius:50%;width:18px;height:18px;line-height:15px;padding:0;cursor:pointer;margin-left:5px}.detail{display:none;color:#bfd1e5;background:#0a1829;border-left:3px solid var(--amber);padding:9px;margin:4px 0 8px;border-radius:0 7px 7px 0;font-size:12px}.detail.open{display:block}.route-summary{color:#94afd0;font-size:12px;margin-top:8px;min-height:36px}
+.route-line{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:2px 0}.route-line span:first-child{min-width:0;overflow-wrap:anywhere}.route-line span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.panel{padding:18px;margin-top:18px;min-width:0}.filters{display:grid;grid-template-columns:repeat(5,minmax(145px,1fr));gap:10px;margin-bottom:15px}.field{display:flex;flex-direction:column;gap:4px;color:var(--muted);font-size:12px}.field input,.field select{width:100%;background:#091626;border:1px solid #315072;border-radius:8px;color:var(--text);padding:9px;min-height:38px}.field input:focus,.field select:focus{outline:2px solid #3c89d4}.tablebox{width:100%;min-width:0}.tablebox table{border-collapse:collapse;width:100%;table-layout:fixed}th,td{text-align:left;border-bottom:1px solid #263b54;padding:10px 8px;vertical-align:middle;overflow-wrap:anywhere}th{background:#142943;color:#83baff;font-size:12px}tr:nth-child(even){background:#0d1b2d}tr:hover{background:#17304c}.date{display:block;font-weight:650}.time{display:block;color:var(--muted);font-size:12px}.tag{display:inline-block;border-radius:999px;padding:3px 8px;background:#16354a;color:#8ce7dc;white-space:nowrap}.tag.warn{color:var(--amber);background:#382d1b}.tag.end{color:#b3c4da;background:#223449}.small{font-size:12px;color:var(--muted)}.empty{text-align:center;padding:30px;color:var(--muted)}
+.access th:nth-child(1){width:12%}.access th:nth-child(2){width:9%}.access th:nth-child(3){width:12%}.access th:nth-child(4){width:9%}.access th:nth-child(5){width:13%}.access th:nth-child(6){width:23%}.access th:nth-child(7){width:8%}.access th:nth-child(8){width:7%}.access th:nth-child(9){width:7%}
+.observations th:nth-child(1){width:13%}.observations th:nth-child(2){width:9%}.observations th:nth-child(3){width:17%}.observations th:nth-child(4){width:16%}.observations th:nth-child(5){width:21%}.observations th:nth-child(6){width:9%}.observations th:nth-child(7){width:8%}.observations th:nth-child(8){width:7%}
+.bar{height:8px;background:#0a1728;border-radius:999px;overflow:hidden;margin:4px 0 12px}.bar div{height:100%;background:linear-gradient(90deg,var(--green),var(--blue),var(--pink));border-radius:999px}.barline{display:flex;justify-content:space-between;gap:8px}.security th:nth-child(1){width:19%}.security th:nth-child(2){width:12%}.security th:nth-child(3){width:20%}.security th:nth-child(4){width:15%}.security th:nth-child(5){width:34%}
+.workspace-tabs{display:flex;gap:8px;margin-top:18px;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:thin}.workspace-tab{flex:0 0 auto;min-height:44px;padding:10px 17px;border:1px solid transparent;border-bottom:3px solid transparent;border-radius:10px 10px 0 0;background:transparent;color:var(--muted);font:inherit;font-weight:650;cursor:pointer;white-space:nowrap}.workspace-tab:hover{color:var(--text);background:#122941}.workspace-tab[aria-selected="true"]{color:var(--text);background:#142d48;border-color:var(--line);border-bottom-color:var(--green)}.workspace-tab:focus-visible{outline:2px solid var(--blue);outline-offset:-3px}.tab-count{margin-left:7px;padding:2px 7px;border-radius:999px;background:#23415f;color:#bdd9fa;font-size:11px;font-weight:700}.tab-panel{margin-top:0;border-radius:0 0 16px 16px;min-height:240px}.tab-panel[hidden]{display:none}.usage-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:8px}.usage-toolbar h2{margin:0}.usage-filter{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px}.usage-filter select{min-width:180px;background:#091626;border:1px solid #315072;border-radius:8px;color:var(--text);padding:8px;min-height:38px}.usage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:14px}.usage-card{min-width:0;padding:14px;border:1px solid var(--line);border-radius:12px;background:#0a192b}.usage-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:12px}.usage-card-head strong{font-size:15px}.usage-card-head span{font-weight:700;color:var(--green);font-variant-numeric:tabular-nums}.usage-card .barline{font-size:13px}.usage-card .barline span:first-child{overflow-wrap:anywhere}.usage-card .bar{margin-bottom:10px}
+@media(max-width:1150px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1000px){.access thead,.security thead{display:none}.access,.security,.access tbody,.security tbody{display:block}.access tr,.security tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:12px;margin:10px 0;border:1px solid var(--line);border-radius:10px}.access td,.security td{display:block;padding:0;border:0;min-width:0}.access td::before,.security td::before{content:attr(data-label);display:block;font-size:11px;color:#83baff;margin-bottom:2px}.access td:nth-child(6),.security td:nth-child(5),.access td.empty,.security td.empty{grid-column:1/-1}.access td.empty::before,.security td.empty::before{display:none}}
+@media(max-width:720px){main{padding:14px}.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;flex-direction:column}.card{padding:13px}.card .value{font-size:21px}}
+.server-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:start;gap:16px}.server-card{align-self:start}.server-title{min-height:40px;align-items:flex-start;gap:12px}.server-title h3{font-size:17px;line-height:1.4}.server-title>span{max-width:66%;text-align:right;font-size:12px;line-height:1.5}
+.route-summary{margin-top:14px;min-height:0}.direct-stat{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:8px 0;color:var(--muted);font-size:13px}.direct-stat strong{color:var(--text);font-size:14px;font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}
+.relay-breakdown{margin-top:6px;border:1px solid #29405d;border-radius:11px;overflow:hidden;background:#091a2b}.relay-breakdown h4{margin:0;padding:11px 12px 3px;font-size:14px;color:#e2efff}.relay-caption{padding:0 12px 9px;color:#8fa9c5;font-size:11px}.relay-table-head,.relay-destination{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(72px,.85fr) minmax(72px,.85fr);gap:10px;align-items:center;padding:10px 12px}.relay-table-head{background:#142b43;color:#95bce5;font-size:11px;font-weight:600}.relay-table-head span:not(:first-child){text-align:right}.relay-destination+.relay-destination{border-top:1px solid #20364f}.relay-provider{min-width:0}.relay-provider-name{display:block;color:#dcecff;font-size:13px;line-height:1.4;font-weight:650;overflow-wrap:anywhere}.relay-provider-kind{display:block;margin-top:3px;color:#829cb8;font-size:10px;line-height:1.4}.relay-value{color:#d9edff;text-align:right;font-size:13px;font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap}.relay-value.missing{color:#859cb6;font-size:11px;font-weight:400}.relay-empty{font-size:12px;color:var(--muted);padding:8px 0}
+.server-notes,.server-history{margin-top:12px;border:1px solid #2c4059;border-radius:9px;background:#0b1a2a;color:#a9bdd4;font-size:12px;overflow:hidden}.server-notes>summary,.server-history>summary{min-height:38px;padding:9px 11px;cursor:pointer;font-size:12px;line-height:1.5;color:#b8cfe8}.server-notes>summary{display:flex;align-items:center;gap:8px;list-style:none}.server-notes>summary::-webkit-details-marker{display:none}.server-notes>summary::before{content:'▸';color:#83baff}.server-notes[open]>summary::before{content:'▾'}.server-note-count{margin-left:auto;font-size:11px;color:#809ab7}.server-note-warning{color:#d6b77a;font-size:10px;border:1px solid #6a5739;border-radius:99px;padding:1px 6px}.server-notes-body{padding:0 12px 12px;border-top:1px solid #263d55}.server-notes-body .muted{font-size:12px;line-height:1.7;margin-top:9px;overflow-wrap:anywhere}.server-history>.split-row{padding:7px 12px;font-size:12px}.server-notes>summary:focus-visible,.server-history>summary:focus-visible{outline:2px solid var(--blue);outline-offset:-3px}
+@media(max-width:760px){html:not(.desktop-layout) .relay-table-head,html:not(.desktop-layout) .relay-destination{grid-template-columns:minmax(0,1.05fr) minmax(70px,.9fr) minmax(70px,.9fr);gap:8px;padding:11px 10px}html:not(.desktop-layout) .relay-provider-name,html:not(.desktop-layout) .relay-value{font-size:14px}html:not(.desktop-layout) .relay-provider-kind,html:not(.desktop-layout) .relay-caption{font-size:12px}html:not(.desktop-layout) .relay-value.missing{font-size:12px}html:not(.desktop-layout) .server-notes>summary,html:not(.desktop-layout) .server-history>summary{min-height:44px;font-size:14px}html:not(.desktop-layout) .server-notes-body .muted{font-size:14px}}
+html.phone-layout .relay-table-head,html.phone-layout .relay-destination{grid-template-columns:minmax(0,1.05fr) minmax(70px,.9fr) minmax(70px,.9fr);gap:8px;padding:11px 10px}html.phone-layout .relay-provider-name,html.phone-layout .relay-value{font-size:14px}html.phone-layout .relay-provider-kind,html.phone-layout .relay-caption{font-size:12px}html.phone-layout .relay-value.missing{font-size:12px}html.phone-layout .server-notes>summary,html.phone-layout .server-history>summary{min-height:44px;font-size:14px}html.phone-layout .server-notes-body .muted{font-size:14px}
+.daily-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.daily-heading h2{margin:0}.daily-presets{display:flex;gap:6px;flex-wrap:wrap}.daily-presets button,.daily-pager button{min-height:38px;padding:7px 12px;border:1px solid #315072;border-radius:8px;color:var(--text);background:#132941;cursor:pointer;font:inherit}.daily-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;align-items:end;margin-bottom:14px}.daily-filters>button{min-height:40px;padding:8px 18px;border:1px solid #347875;border-radius:8px;background:#12403f;color:#c4fff6;font:inherit;cursor:pointer}.daily-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:12px;margin:10px 0}.daily-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}.daily-total-card{border:1px solid #29405d;background:#0a192b;border-radius:10px;padding:13px}.daily-total-card span{display:block;color:var(--muted);font-size:12px}.daily-total-card strong{display:block;margin-top:6px;font-size:22px;color:var(--green);font-variant-numeric:tabular-nums}.daily-total-card small{display:block;margin-top:4px;color:#91a9c4;font-size:11px}.daily-table th:nth-child(1){width:13%}.daily-table th:nth-child(2){width:15%}.daily-table th:nth-child(3),.daily-table th:nth-child(4),.daily-table th:nth-child(5){width:16%}.daily-table th:nth-child(6){width:24%}.daily-table td{font-variant-numeric:tabular-nums}.daily-role-value{display:block;font-weight:650;color:#e1efff;white-space:nowrap}.daily-role-value.missing{color:#d6b77a;font-weight:400;font-size:12px}.daily-estimate{display:inline-block;color:#9bb7d4;font-size:10px;margin-top:3px}.daily-trace summary{cursor:pointer;color:#8fc5ff;font-size:12px}.daily-trace[open]{min-width:0}.daily-trace p{font-size:12px;line-height:1.7;margin:8px 0;color:var(--muted);overflow-wrap:anywhere}.daily-pager{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:14px}.daily-pager span{color:var(--muted);font-size:12px}.daily-pager div{display:flex;gap:8px}.daily-explain{border-top:1px solid #29405d;padding-top:12px;margin-top:14px;color:var(--muted);font-size:12px}.daily-explain summary{cursor:pointer;color:#abc9e9;min-height:28px}.daily-explain p{line-height:1.7;margin:8px 0}
+@media(max-width:760px){html:not(.desktop-layout) .daily-filters{grid-template-columns:repeat(2,minmax(0,1fr))}html:not(.desktop-layout) .daily-filters>label:last-of-type{grid-column:1/-1}html:not(.desktop-layout) .daily-totals{grid-template-columns:1fr;gap:8px}html:not(.desktop-layout) .daily-total-card{display:grid;grid-template-columns:1fr auto;gap:3px 10px;padding:12px}html:not(.desktop-layout) .daily-total-card strong{grid-column:2;grid-row:1/3;margin:0;align-self:center}html:not(.desktop-layout) .daily-total-card small{margin:0}html:not(.desktop-layout) .daily-meta,html:not(.desktop-layout) .daily-pager span,html:not(.desktop-layout) .daily-explain,html:not(.desktop-layout) .daily-trace summary,html:not(.desktop-layout) .daily-trace p{font-size:14px}html:not(.desktop-layout) .daily-estimate{font-size:12px}}
+html.phone-layout .daily-filters{grid-template-columns:repeat(2,minmax(0,1fr))}html.phone-layout .daily-filters>label:last-of-type{grid-column:1/-1}html.phone-layout .daily-totals{grid-template-columns:1fr;gap:8px}html.phone-layout .daily-total-card{display:grid;grid-template-columns:1fr auto;gap:3px 10px;padding:12px}html.phone-layout .daily-total-card strong{grid-column:2;grid-row:1/3;margin:0;align-self:center}html.phone-layout .daily-total-card small{margin:0}html.phone-layout .daily-meta,html.phone-layout .daily-pager span,html.phone-layout .daily-explain,html.phone-layout .daily-trace summary,html.phone-layout .daily-trace p{font-size:14px}html.phone-layout .daily-estimate{font-size:12px}
+</style>
+</head>
+<body><main>
+<header><div class="status" id="status">正在读取</div></header>
+<div class="summary">
+ <div class="card"><div>今日整机流量</div><div class="value" id="today">—</div><small id="today-direction">进站 — / 出站 —</small></div>
+ <div class="card"><div>近 30 天整机流量</div><div class="value" id="month">—</div><small id="month-direction">进站 — / 出站 —</small></div>
+ <div class="card"><div>当前连接 / 用户</div><div class="value" id="online">—</div><small>按各节点汇总，跨节点用户可能重复</small></div>
+ <div class="card"><div>近 30 天自动阻断</div><div class="value" id="blocked">—</div><small>仅包含已接入的安全事件</small></div>
+</div>
+<div class="workspace-tabs" role="tablist" aria-label="流量详情">
+ <button id="tab-servers" class="workspace-tab" type="button" role="tab" aria-controls="panel-servers" aria-selected="true" tabindex="0">服务器统计<span class="tab-count" id="servers-tab-count">—</span></button>
+ <button id="tab-users" class="workspace-tab" type="button" role="tab" aria-controls="panel-users" aria-selected="false" tabindex="-1">各服务器用户用量<span class="tab-count" id="users-tab-count">—</span></button>
+ <button id="tab-daily" class="workspace-tab" type="button" role="tab" aria-controls="panel-daily" aria-selected="false" tabindex="-1">用户每日流量<span class="tab-count" id="daily-tab-count">—</span></button>
+ <button id="tab-records" class="workspace-tab" type="button" role="tab" aria-controls="panel-records" aria-selected="false" tabindex="-1">访问记录<span class="tab-count" id="records-tab-count">—</span></button>
+ <button id="tab-observations" class="workspace-tab" type="button" role="tab" aria-controls="panel-observations" aria-selected="false" tabindex="-1">出口侧观测<span class="tab-count" id="observations-tab-count">—</span></button>
+ <button id="tab-security" class="workspace-tab" type="button" role="tab" aria-controls="panel-security" aria-selected="false" tabindex="-1">安全中心最近阻断<span class="tab-count" id="security-tab-count">—</span></button>
+</div>
+<section class="panel tab-panel" id="panel-servers" role="tabpanel" aria-labelledby="tab-servers" tabindex="0">
+ <div class="section-head" style="margin:0 0 14px"><h2>服务器统计</h2><span class="muted">进出站含各级中转的实际网卡流量；同一用户流量经过多台 VPS 会分别计入</span></div>
+ <div class="server-grid" id="servers"></div>
+</section>
+<section class="panel tab-panel" id="panel-users" role="tabpanel" aria-labelledby="tab-users" tabindex="0" hidden>
+ <div class="usage-toolbar"><h2>各服务器用户用量（近 30 天）</h2><label class="usage-filter">服务器<select id="usage-server"><option value="">全部服务器</option><option>DMIT</option><option>BWH</option><option>NoSLA</option><option>ByteVirt-HK ISP</option><option>GoMami</option><option>Lazycat-SG</option><option>Lazycat-HKT</option></select></label></div>
+ <div class="small">按已采集流量统计；第一台 VPS 已确认但出口分类未采集的记录，也计入该 VPS。流量经过多台 VPS 时，在每台服务器分别计入。没有采集记录的服务器不显示为 0 用量。</div>
+ <div class="usage-grid" id="users"></div>
+</section>
+<section class="panel tab-panel" id="panel-daily" role="tabpanel" aria-labelledby="tab-daily" tabindex="0" hidden>
+ <div class="daily-heading"><h2>用户每日流量</h2><div class="daily-presets"><button type="button" data-daily-days="1">今天</button><button type="button" data-daily-days="7">近 7 天</button><button type="button" data-daily-days="30">近 30 天</button></div></div>
+ <div class="daily-filters"><label class="field">开始日期<input id="daily-from" type="date"></label><label class="field">结束日期<input id="daily-to" type="date"></label><label class="field">用户<select id="daily-user"><option value="">全部用户</option></select></label><button id="daily-refresh" type="button">查询</button></div>
+ <div class="daily-meta"><span>应用流量 · 新加坡时间分日</span><span id="daily-status">切换后读取</span></div>
+ <div class="daily-totals" id="daily-totals"></div>
+ <div class="tablebox"><table class="access daily-table"><thead><tr><th>日期</th><th>用户</th><th>进站流量</th><th>中转流量</th><th>出站流量</th><th>统计依据</th></tr></thead><tbody id="daily-records"></tbody></table></div>
+ <div class="daily-pager"><span id="daily-page-note">—</span><div><button id="daily-prev" type="button">上一页</button><button id="daily-next" type="button">下一页</button></div></div>
+ <details class="daily-explain"><summary>统计口径与开始时间</summary><p>进站指进入链路首台 VPS 的用户应用流量；中转指经确认中转节点或静态出口转发的应用流量；出站优先采用出口采样，无法独立采样的静态出口明确标为转发端计量。三段存在重叠，不能相加当作总用量。</p><p>按实际采样时间归入新加坡自然日。采集间断和缺少的阶段会明确标记，启用前无法可靠还原的日明细不作推算回填。</p><p id="daily-collection-start">统计账本正在初始化。</p></details>
+</section>
+<section class="panel tab-panel" id="panel-records" role="tabpanel" aria-labelledby="tab-records" tabindex="0" hidden>
+ <div class="section-head" style="margin:0 0 14px"><h2>访问记录</h2><div><span class="muted" id="record-note">正在读取</span> <button id="prev" type="button">上一页</button> <button id="next" type="button">下一页</button></div></div>
+ <div class="filters">
+  <label class="field">开始时间<input id="from" type="datetime-local"></label>
+  <label class="field">结束时间<input id="to" type="datetime-local"></label>
+  <label class="field">用户<select id="user"><option value="">全部用户</option></select></label>
+  <label class="field">进站服务器（第一台 VPS）<select id="server"><option value="">全部服务器</option><option>DMIT</option><option>BWH</option><option>NoSLA</option><option>GoMami</option><option>Lazycat-SG</option></select></label>
+  <label class="field">出站类型<select id="type"><option value="">全部类型</option><option>直连</option><option>中转</option><option value="待核实">出口分类未采集</option></select></label>
+  <label class="field">中转/出站服务器<select id="relay"><option value="">全部</option><option>直连</option><option>Kookeey</option><option>ByteVirt-HK ISP</option><option>NexIP SG</option><option>ip2up.com</option><option>proxyhive.io</option><option>DMIT</option><option>NoSLA</option><option>BWH</option><option>GoMami</option><option>Lazycat-SG</option><option>Lazycat-HKT</option></select></label>
+  <label class="field">最终出站目的地址<input id="destination" placeholder="域名或 IP"></label>
+  <label class="field">最小流量 MB<input id="min-traffic" type="number" min="0" step="0.01" placeholder="不限"></label>
+  <label class="field">最短持续时间（秒）<input id="min-duration" type="number" min="0" step="1" placeholder="不限"></label>
+  <label class="field">状态<select id="record-status"><option value="">全部</option><option value="active">活跃</option><option value="closed">已结束</option></select></label>
+ </div>
+ <div class="tablebox"><table class="access"><thead><tr><th>时间</th><th>用户</th><th>进站服务器（第一台 VPS）</th><th>出站类型</th><th>中转/出站服务器</th><th>最终目的地址</th><th>流量</th><th>持续时间</th><th>状态</th></tr></thead><tbody id="records"></tbody></table></div>
+</section>
+<section class="panel tab-panel" id="panel-observations" role="tabpanel" aria-labelledby="tab-observations" tabindex="0" hidden>
+ <div class="section-head" style="margin:0 0 10px"><h2>出口侧观测</h2><div><span class="muted" id="observation-note">切换后读取</span> <button id="obs-prev" type="button">上一页</button> <button id="obs-next" type="button">下一页</button></div></div>
+ <div class="small">这里保留出口侧采集到的历史记录，但缺少可证明的链路第一台 VPS。页面只列出出口侧实际观测到的节点；例如 NoSLA → ByteVirt 不能证明用户最先连入 NoSLA。这里的记录不会混入“访问记录”的进站服务器统计。</div>
+ <div class="filters">
+  <label class="field">开始时间<input id="obs-from" type="datetime-local"></label>
+  <label class="field">结束时间<input id="obs-to" type="datetime-local"></label>
+  <label class="field">用户<select id="obs-user"><option value="">全部用户</option></select></label>
+  <label class="field">目的地址<input id="obs-destination" placeholder="域名或 IP"></label>
+ </div>
+ <div class="tablebox"><table class="access observations"><thead><tr><th>时间</th><th>用户</th><th>出口侧已观测节点（不证明首跳）</th><th>已观测出站/中转节点</th><th>最终目的地址</th><th>流量</th><th>持续时间</th><th>状态</th></tr></thead><tbody id="observations"></tbody></table></div>
+</section>
+<section class="panel tab-panel" id="panel-security" role="tabpanel" aria-labelledby="tab-security" tabindex="0" hidden>
+ <h2>安全中心 · 最近阻断</h2>
+ <div class="tablebox"><table class="security"><thead><tr><th>时间</th><th>用户</th><th>来源</th><th>类型</th><th>详情</th></tr></thead><tbody id="events"></tbody></table></div>
+</section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const fmt=n=>{if(n===null||n===undefined)return '未采集';n=Number(n);for(const unit of ['B','KB','MB','GB','TB']){if(n<1000)return n.toFixed(n<10&&unit!=='B'?2:1)+' '+unit;n/=1000}return n.toFixed(2)+' PB'};
+const dateTime=t=>t?new Date(t*1000).toLocaleString('zh-CN',{hour12:false}):'—';
+const node=(name,cls,text)=>{const e=document.createElement(name);if(cls)e.className=cls;e.textContent=text;return e};
+let data=null;
+const tabNames=['servers','users','daily','records','observations','security'];
+let activeTab='servers';
+function activateTab(name,focus=false){const previous=activeTab;activeTab=name;for(const key of tabNames){const selected=key===name,tab=$('tab-'+key);tab.setAttribute('aria-selected',String(selected));tab.tabIndex=selected?0:-1;$('panel-'+key).hidden=!selected}if(focus)$('tab-'+name).focus();const viewChanged=(name==='observations')!==(previous==='observations');if(name!==previous&&(name==='records'||viewChanged)){currentPage=0;load()}if(name==='daily')loadDaily()}
+function detailRow(parent,label,value,detail){const line=node('div','split-row','');const left=node('span','',label);const right=node('span','',value);line.append(left);if(detail){const button=node('button','info','!');button.type='button';button.setAttribute('aria-label',label+'统计说明');const info=node('div','detail',detail);button.onclick=()=>info.classList.toggle('open');left.append(button);parent.append(line,info)}else parent.append(line);line.append(right)}
+const serverDetailsState=new Map();
+const measuredBytes=value=>typeof value==='number'&&Number.isFinite(value)&&value>=0;
+function rememberServerDetails(){for(const card of document.querySelectorAll('#servers>.server-card')){const title=card.querySelector('.server-title h3');if(!title)continue;const notes=card.querySelector(':scope>.server-notes'),history=card.querySelector(':scope>.server-history');if(notes)serverDetailsState.set(title.textContent+':notes',notes.open);if(history)serverDetailsState.set(title.textContent+':history',history.open)}}
+function organizeServerDetails(){
+ for(const card of document.querySelectorAll('#servers>.server-card')){
+  const title=card.querySelector('.server-title h3');if(!title)continue;
+  const name=title.textContent,paragraphs=Array.from(card.children).filter(child=>child.classList.contains('muted'));
+  if(paragraphs.length){
+   const details=node('details','server-notes',''),summary=node('summary','',''),body=node('div','server-notes-body','');
+   summary.append(node('span','','统计说明'));
+   if(paragraphs.some(p=>/未采集|待核实|不能把缺失/.test(p.textContent)))summary.append(node('span','server-note-warning','含采集提示'));
+   summary.append(node('span','server-note-count',paragraphs.length+' 项'));
+   for(const paragraph of paragraphs)body.append(paragraph);
+   details.append(summary,body);details.open=serverDetailsState.get(name+':notes')===true;
+   details.addEventListener('toggle',()=>serverDetailsState.set(name+':notes',details.open));card.append(details);
+  }
+  const history=Array.from(card.children).find(child=>child.tagName==='DETAILS'&&!child.classList.contains('server-notes'));
+  if(history){history.classList.add('server-history');history.open=serverDetailsState.get(name+':history')===true;history.addEventListener('toggle',()=>serverDetailsState.set(name+':history',history.open))}
+ }
+}
+function relayBreakdown(card,x,name){
+ const section=node('div','route-summary','');
+ function applicationStat(label,value,kind){const line=node('div','direct-stat','');line.dataset.stat=kind;line.append(node('span','',label),node('strong','',fmt(value)));section.append(line)}
+ if(x.direct!==null)applicationStat('直连应用量',x.direct,'direct');
+ const destinations=new Map();
+ function destination(provider,label,kind){if(!destinations.has(provider))destinations.set(provider,{provider,label,kind,app:null,wire:null});return destinations.get(provider)}
+ for(const [key,provider,label] of [['kookeey','Kookeey','kookey'],['bytevirt','ByteVirt-HK ISP','ByteVirt'],['lazycat','Lazycat-SG','LazyCat SG'],['lazycat_hkt','Lazycat-HKT','LazyCat HKT']]){
+  if(measuredBytes(x[key])&&x[key]>0)destination(provider,label,provider==='ByteVirt-HK ISP'?(name==='GoMami'?'香港 ISP · 含于直连':'香港 ISP'):'代理出口').app=x[key];
+ }
+ const staticApp=x.static_outbound||{},staticWire=x.static_wire||{};
+ for(const provider of new Set([...Object.keys(staticApp),...Object.keys(staticWire)])){
+  const item=destination(provider,provider,'静态住宅 IP');
+  item.app=measuredBytes(staticApp[provider])?staticApp[provider]:null;
+  const wire=staticWire[provider];item.wire=wire&&measuredBytes(wire.rx)&&measuredBytes(wire.tx)?wire.rx+wire.tx:null;
+ }
+ if(destinations.size){
+  const table=node('section','relay-breakdown','');table.append(node('h4','','中转目的地'),node('div','relay-caption','应用流量与网卡计数口径不同，不相加'));
+  const headings=node('div','relay-table-head','');for(const text of ['目的地','应用流量','网卡计数'])headings.append(node('span','',text));table.append(headings);
+  for(const item of destinations.values()){
+   const row=node('div','relay-destination','');row.dataset.provider=item.provider;
+   const provider=node('div','relay-provider','');provider.append(node('span','relay-provider-name',item.label),node('span','relay-provider-kind',item.kind));row.append(provider);
+   for(const [kind,value] of [['app',item.app],['wire',item.wire]]){const cell=node('span','relay-value relay-'+kind+(value===null?' missing':''),value===null?(kind==='app'?'未采集':'—'):fmt(value));cell.dataset.state=value===null?'missing':'measured';if(value!==null)cell.dataset.bytes=String(value);else cell.title=kind==='app'?'尚未独立采集应用流量':'尚未独立采集网卡计数';row.append(cell)}
+   table.append(row);
+  }
+  section.append(table);
+ }
+ if((name==='Lazycat-SG'||name==='Lazycat-HKT')&&x.proxy_app!==null)applicationStat('来自 DMIT · 应用估算',x.proxy_app,'incoming');
+ if(!section.children.length)section.append(node('div','relay-empty','路径数据尚未采集'));
+ card.append(section);
+ if(name==='GoMami'&&measuredBytes(x.bytevirt)&&x.bytevirt>0)card.append(node('div','muted','GoMami 的直连应用量已包含经 ByteVirt 的香港双跳；下方中转分项不能与直连应用量相加。'));
+}
+function drawServers(){
+ rememberServerDetails();
+ const host=$('servers');host.textContent='';
+ const names=['DMIT','BWH','NoSLA','ByteVirt-HK ISP','GoMami','Lazycat-SG','Lazycat-HKT'];
+ for(const name of names){
+  const x=data.whole.servers[name]||{};
+  const card=node('section','server-card','');
+  const title=node('div','server-title','');
+  title.append(node('h3','',name),node('span',x.sampled_at&&Date.now()/1000-x.sampled_at<180?'ok':'off',x.sampled_at?'最后采样 '+dateTime(x.sampled_at):'未采集'));
+  card.append(title);
+  const bytes=node('div','bytes','');
+  for(const [label,value] of [['进站',x.in],['出站',x.out]]){
+   const metric=node('div','metric','');
+   metric.append(node('span','',label+' · 近 30 天'),node('strong','',fmt(value)));
+   bytes.append(metric);
+  }
+  card.append(bytes);
+  if(name==='Lazycat-SG')card.append(node('div','muted','懒猫云网卡用量，非套餐计费量；代理分项依据 DMIT 出站应用计数估算，SSH 等归入未分类。'));
+  if(name==='Lazycat-HKT')card.append(node('div','muted','香港懒猫云网卡用量，非套餐计费量；代理分项依据 DMIT 出站应用计数估算，SSH 隧道开销归入未分类。'));
+  const split=node('div','split','');
+  if(!x.sampled_at){
+   split.append(node('div','muted','尚无该服务器的整机采样；不以 0 代替。'));
+   card.append(split);host.append(card);continue;
+  }
+  const physical=(x.in||0)+(x.out||0);
+  const proxy=x.proxy_wire!==null?x.proxy_wire:x.proxy_app===null?null:x.proxy_app*2;
+  const mapping=x.mapping_wire!==null?x.mapping_wire:(name==='NoSLA'?null:0);
+  const maintenance=proxy===null||mapping===null?null:Math.max(0,physical-proxy-mapping);
+  detailRow(split,'代理'+(x.proxy_wire===null?'（约）':''),fmt(proxy));
+  detailRow(split,'维护 / 未分类',fmt(maintenance),'整机网卡总量扣除已识别代理与映射后的余量；包含网站、SSH、系统更新、协议开销及未识别流量。代理应用量按双网络侧估算，不等同于精确抓包。');
+  detailRow(split,name==='Lazycat-SG'?'映射（NAS）':name==='Lazycat-HKT'?'映射（其他）':'映射',fmt(mapping),name==='NoSLA'?'只统计 NAS 映射网页入口 80/443 的外网侧流量；Rathole/SSH 隧道与管理 SSH 共用端口，暂不能精确拆分，留在“维护 / 未分类”。':name==='Lazycat-SG'?'这里仅指 NAS 应用映射，不含代理和 SSH 的 NAT 端口；两者分别计入代理估算与未分类。':name==='Lazycat-HKT'?'此处没有单独识别的非代理映射；DMIT 使用 SSH 隧道进入代理，不能把 NAT 映射端口的字节数另算一次。':'此服务器没有已识别的 NAS 映射；NAS 映射仅在 NoSLA。');
+  card.append(split);
+  relayBreakdown(card,x,name);host.append(card);
+  if(Object.keys(x.static_wire||{}).length)card.append(node('div','muted',
+   '静态 IP 网卡计数自 '+dateTime(x.static_wire_started_at)+' 启用后累计，含 TCP/IP 开销；与逐用户应用量统计起点和口径不同，不可相加。最后采样 '+dateTime(x.static_wire_sampled_at)+
+   (x.static_wire_discontinuities?'；计数器间断 '+x.static_wire_discontinuities+' 次':'')));
+ }
+ queueMicrotask(organizeServerDetails);
+}
+let currentPage=0;
+function drawRecords(){
+ const body=$('records');body.textContent='';const records=data.records||[];
+ for(const x of records){
+  const seconds=x.status==='active'&&x.traffic_known?Math.max(0,Date.now()/1000-x.started):
+    x.traffic_known&&x.ended>=x.started?x.ended-x.started:null;
+  const traffic=(x.upload||0)+(x.download||0);const measured=Boolean(x.traffic_known);
+  const tr=document.createElement('tr');const dt=new Date(x.started*1000);const time=node('td','','');
+  time.append(node('span','date',dt.toLocaleDateString('zh-CN')),node('span','time',dt.toLocaleTimeString('zh-CN',{hour12:false})));
+  tr.append(time);for(const value of [x.user||'—',x.server||'—'])tr.append(node('td','',value));
+  const kind=node('td','','');kind.append(node('span','tag',x.route_type==='待核实'?'出口分类未采集':x.route_type));tr.append(kind);
+  tr.append(node('td','',!x.relay||x.relay==='待核实'||x.relay==='出站待核实'?'出口服务器未采集':x.relay),node('td','',x.destination||'—'),
+            node('td','',measured?fmt(traffic):'未采集'),
+            node('td','',seconds===null?'未采集':Math.floor(seconds)+' 秒'));
+  const status=node('td','','');status.append(node('span','tag'+(x.status==='active'?'':' end'),x.status==='active'?'活跃':'已结束'));
+  tr.append(status);tr.querySelectorAll('td').forEach((cell,i)=>cell.dataset.label=['时间','用户','进站服务器（第一台 VPS）','出站类型','中转/出站服务器','最终目的地址','流量','持续时间','状态'][i]);body.append(tr);
+ }
+ if(!records.length){const tr=document.createElement('tr');const td=node('td','empty','当前筛选没有记录');td.colSpan=9;tr.append(td);body.append(tr)}
+ const total=data.records_total||0;$('record-note').textContent='共 '+total+' 条 · 第 '+(currentPage+1)+' 页';
+ $('prev').disabled=currentPage<=0;$('next').disabled=(currentPage+1)*(data.records_page_size||100)>=total;
+}
+function drawObservations(){
+ const body=$('observations');body.textContent='';const records=data.records||[];
+ for(const x of records){
+  const seconds=x.status==='active'&&x.traffic_known?Math.max(0,Date.now()/1000-x.started):
+    x.traffic_known&&x.ended>=x.started?x.ended-x.started:null;
+  const traffic=(x.upload||0)+(x.download||0),measured=Boolean(x.traffic_known);
+  const tr=document.createElement('tr'),dt=new Date(x.started*1000),time=node('td','','');
+  time.append(node('span','date',dt.toLocaleDateString('zh-CN')),node('span','time',dt.toLocaleTimeString('zh-CN',{hour12:false})));
+  tr.append(time,node('td','',x.user||'—'),node('td','',x.observed_hop||'未采集'),
+            node('td','',x.observed_exit||'未采集'),node('td','',x.destination||'—'),
+            node('td','',measured?fmt(traffic):'未采集'),
+            node('td','',seconds===null?'未采集':Math.floor(seconds)+' 秒'));
+  const status=node('td','','');status.append(node('span','tag'+(x.status==='active'?'':' end'),x.status==='active'?'活跃':'已结束'));
+  tr.append(status);tr.querySelectorAll('td').forEach((cell,i)=>cell.dataset.label=['时间','用户','出口侧已观测节点（不证明首跳）','已观测出站/中转节点','最终目的地址','流量','持续时间','状态'][i]);body.append(tr);
+ }
+ if(!records.length){const tr=document.createElement('tr'),td=node('td','empty','当前没有出口侧观测记录');td.colSpan=8;tr.append(td);body.append(tr)}
+ const total=data.records_total||0;$('observation-note').textContent='共 '+total+' 条 · 第 '+(currentPage+1)+' 页';
+ $('obs-prev').disabled=currentPage<=0;$('obs-next').disabled=(currentPage+1)*(data.records_page_size||100)>=total;
+}
+function drawUsers(){
+ const box=$('users');box.textContent='';const rows=data.server_user_usage||[];
+ const selected=$('usage-server').value;
+ const names=selected?[selected]:['DMIT','BWH','NoSLA','ByteVirt-HK ISP','GoMami','Lazycat-SG','Lazycat-HKT'];
+ for(const name of names){
+  const matches=rows.filter(x=>x.server===name).sort((a,b)=>Number(b.total)-Number(a.total));
+  const card=node('section','usage-card',''),head=node('div','usage-card-head','');
+  const total=matches.reduce((sum,x)=>sum+Number(x.total||0),0);
+  head.append(node('strong','',name),node('span','',matches.length?fmt(total):'未采集'));card.append(head);
+  if(!matches.length){card.append(node('div','small','暂无这台服务器的已核实用户用量'));box.append(card);continue}
+  const max=Math.max(1,...matches.map(x=>Number(x.total||0)));
+  for(const row of matches){const label=node('div','barline','');label.append(node('span','',row.user),node('span','',fmt(row.total)));const bar=node('div','bar','');const fill=document.createElement('div');fill.style.width=Math.max(1,100*Number(row.total||0)/max)+'%';bar.append(fill);card.append(label,bar)}
+  box.append(card);
+ }
+}
+function drawEvents(){const body=$('events');body.textContent='';for(const x of data.events||[]){const tr=document.createElement('tr');for(const [i,value] of [dateTime(x.ts),x.user,x.source,x.kind,x.detail].entries()){const cell=node('td','',value||'—');cell.dataset.label=['时间','用户','来源','类型','详情'][i];tr.append(cell)}body.append(tr)}if(!body.children.length){const tr=document.createElement('tr');const td=node('td','empty','暂无阻断记录');td.colSpan=5;tr.append(td);body.append(tr)}}
+async function load(){
+ const requestId=++loadSequence,requestView=activeTab==='observations'?'exit_observations':'first_hop';
+ try{
+ const query=new URLSearchParams({page:String(currentPage)});
+ if(requestView==='exit_observations'){
+  query.set('view',requestView);
+  const from=$('obs-from').value,to=$('obs-to').value;
+  if(from)query.set('from_ts',String(Math.floor(new Date(from).getTime()/1000)));
+  if(to)query.set('to_ts',String(Math.floor(new Date(to).getTime()/1000)));
+  if($('obs-user').value)query.set('user',$('obs-user').value);
+  if($('obs-destination').value)query.set('q',$('obs-destination').value);
+ }
+ else{
+  const from=$('from').value,to=$('to').value;
+  if(from)query.set('from_ts',String(Math.floor(new Date(from).getTime()/1000)));
+  if(to)query.set('to_ts',String(Math.floor(new Date(to).getTime()/1000)));
+  for(const [key,id] of [['user','user'],['server','server'],['type','type'],['relay','relay'],['q','destination'],['status','record-status']])if($(id).value)query.set(key,$(id).value);
+  if($('min-traffic').value)query.set('min_bytes',String(Math.ceil(Number($('min-traffic').value)*1000000)));
+  if($('min-duration').value)query.set('min_seconds',$('min-duration').value);
+ }
+ const response=await fetch('/api/data?'+query,{cache:'no-store'});if(!response.ok)throw Error('HTTP '+response.status);const nextData=await response.json();if(requestId!==loadSequence||requestView!==(activeTab==='observations'?'exit_observations':'first_hop'))return;data=nextData;
+ const s=data.whole.summary;$('today').textContent=fmt(s.today_in+s.today_out);$('today-direction').textContent='进站 '+fmt(s.today_in)+' / 出站 '+fmt(s.today_out);
+ $('month').textContent=fmt(s.month_in+s.month_out);$('month-direction').textContent='进站 '+fmt(s.month_in)+' / 出站 '+fmt(s.month_out);
+ $('online').textContent=data.summary.connections+' / '+data.summary.users;$('blocked').textContent=data.summary.blocked;
+ $('status').textContent='● 已更新 '+new Date().toLocaleTimeString('zh-CN',{hour12:false});
+ for(const id of ['user','obs-user']){const select=$(id),old=select.value;select.textContent='';select.append(node('option','','全部用户'));select.firstChild.value='';for(const name of data.record_users||[]){const option=node('option','',name);option.value=name;select.append(option)}select.value=old}
+ drawServers();if(requestView==='exit_observations')drawObservations();else drawRecords();drawUsers();drawEvents();
+ $('servers-tab-count').textContent=$('servers').childElementCount+' 台';
+ $('users-tab-count').textContent=new Set((data.server_user_usage||[]).map(x=>x.server)).size+' 台';
+ $(requestView==='exit_observations'?'observations-tab-count':'records-tab-count').textContent=Number(data.records_total||0).toLocaleString('zh-CN');
+ $('security-tab-count').textContent=Number((data.events||[]).length).toLocaleString('zh-CN');
+ }catch(error){if(requestId===loadSequence&&requestView===(activeTab==='observations'?'exit_observations':'first_hop'))$('status').textContent='● 数据暂不可用：'+error.message}
+}
+let dailyPage=0,dailyRequestSequence=0;
+const dailyExpanded=new Set();
+const dailyRoleNames={ingress:'进站',relay:'中转',egress:'出站'};
+const dailyDay=()=>new Date(Date.now()+8*3600000).toISOString().slice(0,10);
+const dailyTime=ts=>ts?new Date(ts*1000).toLocaleString('zh-CN',{timeZone:'Asia/Singapore',hour12:false}):'—';
+function dailyEmpty(text){const tr=node('tr','',''),td=node('td','empty',text);td.colSpan=6;tr.append(td);$('daily-records').replaceChildren(tr)}
+function drawDaily(payload){
+ const rows=payload.rows||[],body=$('daily-records');
+ for(const detail of body.querySelectorAll('details.daily-trace')){if(detail.open)dailyExpanded.add(detail.dataset.key);else dailyExpanded.delete(detail.dataset.key)}
+ body.textContent='';
+ const totals=$('daily-totals');totals.textContent='';
+ for(const role of ['ingress','relay','egress']){
+  const total=(payload.totals||{})[role],card=node('div','daily-total-card','');card.append(node('span','',dailyRoleNames[role]+' · 所选范围'));
+  card.append(node('strong','',payload.total&&total&&total.rows_covered>0&&measuredBytes(total.bytes)?fmt(total.bytes):'—'));
+  const note=!payload.total?'暂无日账本记录':!total?'正在汇总':!total.rows_covered?'此阶段尚无可核实采样':total.rows_missing?'已采集部分 · '+total.rows_missing+' 条缺段':total.estimated?'含转发端计量':'已采集应用流量';card.append(node('small','',note));totals.append(card);
+ }
+ const labels=['日期','用户','进站流量','中转流量','出站流量','统计依据'];
+ for(const item of rows){
+  const tr=node('tr','','');tr.dataset.dailyUser=item.user;tr.dataset.dailyDay=item.day;tr.append(node('td','',item.day),node('td','',item.user));
+  for(const role of ['ingress','relay','egress']){
+   const metric=item[role],cell=node('td','',''),known=metric&&measuredBytes(metric.bytes);cell.dataset.role=role;cell.dataset.state=known?'measured':'missing';if(known)cell.dataset.bytes=String(metric.bytes);
+   cell.append(node('span','daily-role-value'+(known?'':' missing'),known?fmt(metric.bytes):item.status==='before_collection'?'启用前无明细':'未观测'));
+   if(known&&metric.estimated)cell.append(node('small','daily-estimate',role==='egress'?'转发端计量':'应用估算'));
+   if(known&&metric.frozen)cell.append(node('small','daily-estimate','到期冻结'));
+   tr.append(cell);
+  }
+  const traceCell=node('td','',''),trace=node('details','daily-trace',''),key=item.day+'\0'+item.user;trace.dataset.key=key;trace.open=dailyExpanded.has(key);trace.append(node('summary','',item.status==='before_collection'?'启用前无日明细':item.partial?'来源与口径 · 含未观测项':'来源与口径'));
+  for(const role of ['ingress','relay','egress']){
+   const metric=item[role];if(!metric){trace.append(node('p','',dailyRoleNames[role]+'：此阶段尚无可核实的日采样。'));continue}
+   for(const source of metric.sources||[]){const amount=measuredBytes(source.upload)&&measuredBytes(source.download)?source.upload+source.download:null;trace.append(node('p','',dailyRoleNames[role]+'：'+(source.host||'采样来源')+(source.peer?' → '+source.peer:'')+' · '+fmt(amount)+(source.estimated?'（转发端计量）':'')+' · '+dailyTime(source.updated_at)));if(source.frozen)trace.append(node('p','','到期截止：'+dailyTime(source.freeze_at)+'；最后真实采样：'+dailyTime(source.real_sample_at||source.updated_at)))}
+  }
+  if(item.gaps&&item.gaps.length)trace.append(node('p','',item.gaps.length+' 处采样间断已标记；缺失阶段不按 0 计算。'));
+  trace.addEventListener('toggle',()=>{if(trace.open)dailyExpanded.add(key);else dailyExpanded.delete(key)});traceCell.append(trace);tr.append(traceCell);
+  tr.querySelectorAll(':scope>td').forEach((cell,index)=>cell.dataset.label=labels[index]);body.append(tr);
+ }
+ if(!rows.length)dailyEmpty(payload.available?'所选日期尚无日账本记录；启用前的数据不作推算回填。':'每日账本正在初始化。');
+ const select=$('daily-user'),old=select.value;select.textContent='';const all=node('option','','全部用户');all.value='';select.append(all);for(const user of Array.from(new Set([old,...(payload.users||[])].filter(Boolean))).sort()){const option=node('option','',user);option.value=user;select.append(option)}select.value=old;
+ $('daily-tab-count').textContent=(payload.users||[]).length+' 人';
+ $('daily-page-note').textContent='共 '+Number(payload.total||0).toLocaleString('zh-CN')+' 条用户日记录 · 第 '+(dailyPage+1)+' 页';
+ $('daily-prev').disabled=dailyPage===0;$('daily-next').disabled=(dailyPage+1)*100>=Number(payload.total||0);
+ $('daily-collection-start').textContent=payload.started_at?'统计启用：'+dailyTime(payload.started_at)+'；仅保留可核实的日采样和来源。':'统计账本正在初始化。';
+ for(const source of payload.sources||[]){if(source.frozen)$('daily-collection-start').append(node('span','',' '+source.source_key+' 已冻结；截止 '+dailyTime(source.freeze_at)+'，最后真实采样 '+dailyTime(source.real_sample_at||source.last_observed_at)+'。'))}
+ $('daily-status').textContent='已更新 '+new Date().toLocaleTimeString('zh-CN',{timeZone:'Asia/Singapore',hour12:false});
+}
+async function loadDaily(){
+ const start=$('daily-from').value,end=$('daily-to').value;
+ if(!start||!end||start>end||end>dailyDay()||(Date.parse(end)-Date.parse(start))/86400000>30){$('daily-status').textContent='请选择最多 31 天且不晚于今天的有效日期范围';return}
+ const requestId=++dailyRequestSequence;$('daily-status').textContent='正在读取每日统计…';$('daily-refresh').disabled=true;
+ try{const query=new URLSearchParams({from:start,to:end,user:$('daily-user').value,limit:'100',offset:String(dailyPage*100)}),response=await fetch('/api/user-daily?'+query,{cache:'no-store'});if(!response.ok)throw Error(response.status===503?'每日采集正在初始化或暂不可用':'每日统计暂不可用（HTTP '+response.status+'）');const payload=await response.json();if(requestId===dailyRequestSequence)drawDaily(payload)}catch(error){if(requestId===dailyRequestSequence){$('daily-status').textContent=error.message;dailyEmpty('暂时无法读取日账本，已有统计不会被清空。')}}finally{if(requestId===dailyRequestSequence)$('daily-refresh').disabled=false}
+}
+function setDailyRange(days){const end=dailyDay(),start=new Date(Date.parse(end+'T00:00:00+08:00')-(days-1)*86400000+8*3600000).toISOString().slice(0,10);$('daily-from').value=start;$('daily-to').value=end;dailyPage=0;loadDaily()}
+let loadSequence=0;
+for(const id of ['from','to','user','server','type','relay','min-traffic','min-duration','record-status'])$(id).addEventListener('change',()=>{currentPage=0;load()});
+for(const id of ['obs-from','obs-to','obs-user'])$(id).addEventListener('change',()=>{currentPage=0;load()});
+let searchTimer=0;$('destination').addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>{currentPage=0;load()},350)});
+let obsSearchTimer=0;$('obs-destination').addEventListener('input',()=>{clearTimeout(obsSearchTimer);obsSearchTimer=setTimeout(()=>{currentPage=0;load()},350)});
+$('prev').onclick=()=>{if(currentPage>0){currentPage--;load()}};$('next').onclick=()=>{currentPage++;load()};
+$('obs-prev').onclick=()=>{if(currentPage>0){currentPage--;load()}};$('obs-next').onclick=()=>{currentPage++;load()};
+$('usage-server').addEventListener('change',()=>{if(data)drawUsers()});
+$('daily-from').value=$('daily-to').value=dailyDay();$('daily-from').max=$('daily-to').max=dailyDay();
+for(const button of document.querySelectorAll('[data-daily-days]'))button.addEventListener('click',()=>setDailyRange(Number(button.dataset.dailyDays)));
+$('daily-refresh').addEventListener('click',()=>{dailyPage=0;loadDaily()});$('daily-user').addEventListener('change',()=>{dailyPage=0;loadDaily()});
+$('daily-prev').addEventListener('click',()=>{if(dailyPage>0){dailyPage--;loadDaily()}});$('daily-next').addEventListener('click',()=>{dailyPage++;loadDaily()});
+for(const name of tabNames){const tab=$('tab-'+name);tab.addEventListener('click',()=>activateTab(name));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=tabNames[(tabNames.indexOf(name)+1)%tabNames.length];else if(event.key==='ArrowLeft')next=tabNames[(tabNames.indexOf(name)+tabNames.length-1)%tabNames.length];else if(event.key==='Home')next=tabNames[0];else if(event.key==='End')next=tabNames[tabNames.length-1];if(next){event.preventDefault();activateTab(next,true)}})}
+activateTab('servers');
+if(location.protocol==='file:'){
+ $('status').textContent='● 本地文件无法读取实时数据';
+}else{load();setInterval(()=>{load();if(activeTab==='daily')loadDaily()},15000)}
+</script>
+</body></html>

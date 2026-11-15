@@ -1,0 +1,21 @@
+[Unit]
+Description=Loopback-only BitTorrent refusal endpoint
+Before=security-confirmed-events.service
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/security-mail-alerts/quarantine.py
+Restart=on-failure
+RestartSec=2
+DynamicUser=yes
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+RestrictAddressFamilies=AF_INET AF_UNIX
+IPAddressDeny=any
+IPAddressAllow=localhost
+MemoryMax=32M
+TasksMax=40
+
+[Install]
+WantedBy=multi-user.target

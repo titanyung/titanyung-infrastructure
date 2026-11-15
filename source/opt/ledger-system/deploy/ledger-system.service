@@ -1,0 +1,21 @@
+[Unit]
+Description=Independent Ledger Billing System
+After=network.target
+
+[Service]
+Type=simple
+User=ledger
+Group=ledger
+WorkingDirectory=/opt/ledger-system
+EnvironmentFile=/etc/ledger-system/ledger.env
+ExecStart=/opt/ledger-system/.venv/bin/gunicorn --workers 2 --threads 4 --bind 127.0.0.1:28908 --access-logfile - --error-logfile - wsgi:application
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/ledger-system
+
+[Install]
+WantedBy=multi-user.target

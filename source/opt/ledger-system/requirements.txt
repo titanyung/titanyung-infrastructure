@@ -1,0 +1,4 @@
+Flask>=3.1,<4
+gunicorn>=23,<24
+qrcode[pil]>=8,<9
+webauthn>=2.2,<3

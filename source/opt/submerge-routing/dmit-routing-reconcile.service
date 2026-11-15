@@ -1,0 +1,23 @@
+[Unit]
+Description=Reconcile actual routing, client, executor and retained statistics generations
+After=network-online.target dmit-direct-staging.service
+Wants=network-online.target
+StartLimitIntervalSec=900
+StartLimitBurst=4
+
+[Service]
+Type=oneshot
+User=root
+UMask=0077
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONPATH=/opt/submerge-routing:/opt/submerge-topology:/opt/submerge-edge:/opt/submerge-user-access:/opt/submerge-client-policy:/opt/submerge:/opt/sg-traffic-dashboard-expiry-prod
+ExecStart=/usr/bin/python3 /opt/submerge-routing/release_reconcile.py --catch-up
+TimeoutStartSec=900
+Restart=on-failure
+RestartSec=15
+KillMode=control-group
+NoNewPrivileges=true
+MemoryHigh=192M
+MemoryMax=384M
+Nice=10
+

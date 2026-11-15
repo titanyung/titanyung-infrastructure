@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}账单{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">交易明细</p><h1>账单</h1><p class="muted">{{ month }} 账单周期（{{ period }}）· 合计 {{ month_total|money }} · 总预算剩余 {{ (month_budget-month_total)|money }}</p></div><a class="button primary" href="{{ url_for('bill_new') }}">＋ 新增账单</a></div>
+<section class="card">
+  <h2>导出账单</h2>
+  <form class="inline-form" method="get" action="{{ url_for('bill_export') }}">
+    <input type="hidden" name="month" value="{{ month }}">
+    <label>开始日期<input type="date" name="start" value="{{ export_start }}" required></label>
+    <label>结束日期<input type="date" name="end" value="{{ export_end }}" required></label>
+    <button class="primary" type="submit">导出 CSV</button>
+  </form>
+  <p class="fine-print">默认导出最近一个已结算周期；尚无已结算周期时默认正式起点至今日。每月 13 日结算上月 13 日至本月 12 日。自选日期最多连续 30 天，完整的 31 天账单周期或自然月可例外。CSV 可用 Excel 打开。</p>
+</section>
+<section class="card">
+  <form class="inline-form" method="get"><label>账单周期起始月<input type="month" name="month" value="{{ month }}"></label><button type="submit">查看</button></form>
+  {% if bills %}<div class="table-wrap"><table class="bill-table"><thead><tr><th>时间</th><th>金额</th><th>消费项目</th><th>标签</th><th>总预算剩余</th><th>项目预算剩余</th><th>备注</th><th>操作</th></tr></thead><tbody>
+    {% for item in bills %}<tr><td data-label="时间" class="nowrap">{{ item.bill.occurred_at[:16] }}</td><td data-label="金额" class="nowrap {{ 'refund' if item.bill.amount_cents < 0 else '' }}">{{ item.bill.amount_cents|money }}</td><td data-label="项目">{{ item.bill.category_name }}</td><td data-label="标签">{% for tag in item.tags %}<span class="chip">{{ tag }}</span>{% endfor %}</td><td data-label="总预算剩余" class="nowrap">{{ item.total_remaining|money }}</td><td data-label="项目剩余" class="nowrap">{{ item.category_remaining|money }}</td><td data-label="备注" class="note-cell">{{ item.bill.note }}</td><td data-label="操作" class="actions"><a href="{{ url_for('bill_edit',bill_id=item.bill.id) }}">修改</a><form method="post" action="{{ url_for('bill_delete',bill_id=item.bill.id) }}" data-confirm="确定删除这笔账单？"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="confirm" value="delete"><button class="link-danger" type="submit">删除</button></form></td></tr>{% endfor %}
+  </tbody></table></div>{% else %}<div class="empty">这个账单周期还没有账单。点击“新增账单”开始记录。</div>{% endif %}
+</section>
+<p class="fine-print">每笔账单的剩余金额按时间顺序计算；项目剩余使用该项目本身的预算及其子项目交易。负金额表示退款。</p>
+{% endblock %}

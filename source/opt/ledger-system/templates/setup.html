@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}首次启用{% endblock %}
+{% block content %}
+<section class="auth-card card">
+  <p class="eyebrow">首次启用</p>
+  {% if stage == 'token' %}
+  <h1>创建独立账本</h1>
+  <p class="muted">输入部署时生成的初始化密钥。现有 Bill 系统的数据不会被读取或改动。</p>
+  <form method="post" class="stack">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>初始化密钥<input name="token" type="password" autocomplete="off" required autofocus></label>
+    <button class="primary" type="submit">继续绑定验证器</button>
+  </form>
+  {% else %}
+  <h1>绑定验证器并设置密码</h1>
+  <p class="muted">用 Google Authenticator 等兼容应用扫描二维码，再输入当前六位代码。请保管好验证器；解绑会清空此账本全部数据。</p>
+  {% if qr_image %}<img class="qr" alt="验证器绑定二维码" src="data:image/png;base64,{{ qr_image }}">{% endif %}
+  <p class="secret">手动输入密钥：<code>{{ totp_secret }}</code></p>
+  <form method="post" class="stack">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>六位验证器代码<input name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" required></label>
+    <label>新密码（至少 10 位）<input name="password" type="password" minlength="10" autocomplete="new-password" required></label>
+    <label>再次输入密码<input name="confirm" type="password" minlength="10" autocomplete="new-password" required></label>
+    <button class="primary" type="submit">完成启用</button>
+  </form>
+  {% endif %}
+</section>
+{% endblock %}

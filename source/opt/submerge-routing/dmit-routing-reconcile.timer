@@ -1,0 +1,15 @@
+[Unit]
+Description=Exact retirement, boot recovery and pending whole-layer catch-up
+
+[Timer]
+OnCalendar=2026-11-17 00:00:00 Asia/Singapore
+OnCalendar=2026-12-06 00:00:00 Asia/Singapore
+OnBootSec=2min
+OnUnitInactiveSec=5min
+AccuracySec=1s
+RandomizedDelaySec=0
+Persistent=true
+Unit=dmit-routing-reconcile.service
+
+[Install]
+WantedBy=timers.target

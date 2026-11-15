@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{ '修改账单' if bill else '新增账单' }}{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">交易录入</p><h1>{{ '修改账单' if bill else '新增账单' }}</h1></div><a class="button" href="{{ url_for('bills') }}">返回列表</a></div>
+<section class="card form-card">
+  {% if not categories %}<p>请先<a href="{{ url_for('category_manage') }}">新增消费项目</a>，再录入账单。</p>{% endif %}
+  <form method="post" class="form-grid">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>时间 <span class="required">*</span><input type="datetime-local" name="occurred_at" value="{{ bill.occurred_at[:16].replace(' ','T') if bill else now }}" required></label>
+    <label>金额 <span class="required">*</span><input type="number" step="0.01" name="amount" value="{{ '%.2f'|format(bill.amount_cents/100) if bill else '' }}" placeholder="正数支出，负数退款" required></label>
+    <label>消费项目 <span class="required">*</span><select name="category_id" required><option value="">请选择</option>{% for category in categories %}<option value="{{ category.id }}" {{ 'selected' if bill and bill.category_id == category.id else '' }}>{{ '　' * category.depth }}{{ category.name }}</option>{% endfor %}</select></label>
+    <label>标签<input type="text" name="tags" value="{{ tag_names|join(' ') }}" placeholder="多个标签用空格隔开，可直接创建" autocomplete="off" data-tag-input><span class="tag-choices" aria-label="已有标签">{% for tag in tags %}<button type="button" class="tag-suggestion" data-tag-choice="{{ tag.name }}">{{ tag.name }}</button>{% endfor %}</span></label>
+    <label class="full">备注<textarea name="note" rows="4" maxlength="2000" placeholder="可选">{{ bill.note if bill else '' }}</textarea></label>
+    <div class="full"><button class="primary" type="submit" {{ 'disabled' if not categories else '' }}>{{ '保存修改' if bill else '新增账单' }}</button></div>
+  </form>
+</section>
+{% endblock %}

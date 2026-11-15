@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#071322">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>{% block title %}账本{% endblock %} · Ledger</title>
+  <link rel="manifest" href="{{ url_for('manifest') }}">
+  <link rel="icon" href="{{ url_for('static', filename='ledger-icon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="{{ url_for('dashboard') }}"><span class="brand-icon">◈</span><span>Ledger <small>独立账本</small></span></a>
+      {% if session.get('auth_version') and request.endpoint not in ('setup', 'setup_finish', 'login', 'recover', 'recover_action') %}
+      <nav aria-label="主导航">
+        <a class="{{ 'active' if request.endpoint == 'dashboard' else '' }}" href="{{ url_for('dashboard') }}">统计</a>
+        <a class="{{ 'active' if request.endpoint in ('bills','bill_new','bill_edit') else '' }}" href="{{ url_for('bills') }}">账单</a>
+        <a class="{{ 'active' if request.endpoint == 'budgets' else '' }}" href="{{ url_for('budgets') }}">预算</a>
+        <a class="{{ 'active' if request.endpoint == 'category_manage' else '' }}" href="{{ url_for('category_manage') }}">项目</a>
+        <a class="{{ 'active' if request.endpoint == 'tag_manage' else '' }}" href="{{ url_for('tag_manage') }}">标签</a>
+        <a class="{{ 'active' if request.endpoint == 'settings' else '' }}" href="{{ url_for('settings') }}">设置</a>
+      </nav>
+      <button class="quick-toggle" type="button" aria-expanded="false" aria-controls="quick-add-panel">＋ 快捷添加</button>
+      <form method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="text-button" type="submit">退出</button></form>
+      {% endif %}
+    </header>
+    <main>
+      {% if session.get('auth_version') and request.endpoint not in ('setup', 'setup_finish', 'login', 'recover', 'recover_action') %}
+      <section id="quick-add-panel" class="card quick-panel" hidden>
+        <h2>快捷添加账单</h2>
+        <p class="muted">时间填 n 表示现在；多个标签用空格分隔，可直接输入新标签。</p>
+        <form method="post" action="{{ url_for('quick_add') }}" class="quick-form" data-draft="quick-add">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <input type="hidden" name="return_to" value="">
+          <label>时间<input type="text" name="occurred_at" value="n" placeholder="n 或 2026-10-13T12:30" required></label>
+          <label>金额<input type="number" name="amount" step="0.01" placeholder="正数支出，负数退款" required></label>
+          <label>消费项目<select name="category_id" required><option value="">请选择</option>{% for category in quick_categories %}<option value="{{ category.id }}">{{ '　' * category.depth }}{{ category.name }}</option>{% endfor %}</select></label>
+          <label>标签<input type="text" name="tags" placeholder="多个标签空格隔开" autocomplete="off" data-tag-input><span class="tag-choices">{% for tag in quick_tags %}<button type="button" class="tag-suggestion" data-tag-choice="{{ tag.name }}">{{ tag.name }}</button>{% endfor %}</span></label>
+          <label class="quick-note">备注<input type="text" name="note" maxlength="2000" placeholder="可选"></label>
+          <button class="primary" type="submit" {{ 'disabled' if not quick_categories else '' }}>添加</button>
+        </form>
+      </section>
+      {% endif %}
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for type, message in messages %}<div class="alert {{ type }}" role="alert">{{ message }}</div>{% endfor %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>

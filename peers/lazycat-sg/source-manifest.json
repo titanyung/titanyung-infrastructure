@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "origin": "lazycat-sg",
+  "roots": [
+    "/usr/local/lib/lazycat-edge"
+  ],
+  "file_count": 18,
+  "total_bytes": 249532,
+  "files": [
+    {
+      "path": "usr/local/lib/lazycat-edge/ai_health_v4.py",
+      "bytes": 4852,
+      "sha256": "d78ca4fd00bafa7a508a635c2fccb40e02cc3521f30eca25ac13b4fea6ba3858",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_ai_policy.py",
+      "bytes": 17451,
+      "sha256": "6f97b6efd8d6247023c48b56f80300384635569866b1cf83a08097c20cdbe8e3",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_ai_policy_v2.py",
+      "bytes": 11048,
+      "sha256": "8b4fe25931bfaf73c206c1fd4bcf43f9e9dc7c312c74968c97d56ff7db3d1970",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_ai_policy_v3.py",
+      "bytes": 9637,
+      "sha256": "feae40a7833f83a49afa0d32e4687c0edb9213e717875919faa3f21b16242df2",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_ai_policy_v4.py",
+      "bytes": 10879,
+      "sha256": "ecf65836e5d9293bc3a212d206080e85a398fa3758ec036c9d20662783b31900",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_apply.py",
+      "bytes": 53017,
+      "sha256": "434e378d1994229fe034f626d98f6191bbb5ce35e8aa7d00a9cb851e3346ba72",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_bundle.py",
+      "bytes": 18946,
+      "sha256": "38532eb3373ff533ad5e0d2581eae793727d4726b19e84539d7da19ee88fbdca",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_controller.py",
+      "bytes": 27278,
+      "sha256": "a38dc37bdd2fbd7a479ae4c0fd29bcbaf58e2f61dfab11c53585dfe375992161",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_events.py",
+      "bytes": 30024,
+      "sha256": "4c05b277e3a68cec1469649e534373f83bd9b3150626ed9143c4953eaefb2956",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_logs.py",
+      "bytes": 18727,
+      "sha256": "ddf668e86bca5452b733f7db9a7c0279ab33a8864cb0f6b45d2791ef2596dae8",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_pool_probe.py",
+      "bytes": 2170,
+      "sha256": "8c8806066f71647554378da448296904f820669c06c51803501926f6342108cd",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_probe.py",
+      "bytes": 20379,
+      "sha256": "2ad0853fc8fab09ee397266532bf48b7c3cd1c2815bd88bb052d34b40df877e9",
+      "mode": "0o600",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_start_guard.py",
+      "bytes": 1808,
+      "sha256": "20f84ca05d4aa7f58d3615ee503ded47c597faabf7908fa896029a47e89c1cd9",
+      "mode": "0o600",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_status.py",
+      "bytes": 7865,
+      "sha256": "4f60c20ef9eff1022b36fe36e4a77b3d73f8559140605bae7cb107505362dac8",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/routing_contract.py",
+      "bytes": 5123,
+      "sha256": "d1a536661887ec9188c92c3ff4d8009d6359b24feef2392c29966f1e2b41a41d",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/starhub_selection.py",
+      "bytes": 8138,
+      "sha256": "aba03639220a7b30209d17b1fb0624f4421c96a6362d2d0461a5b8ca889c96f9",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/starhub_selection_v3.py",
+      "bytes": 647,
+      "sha256": "ff46fa418198795dff53ca07d32f884838559063e7d89fc51e69f51ec4fb3e58",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/starhub_selection_v4.py",
+      "bytes": 1543,
+      "sha256": "e5ae91ccfebbb8c074a429db1370bfe744b6f839df6e86b0df391f8dbdd1bec4",
+      "mode": "0o644",
+      "risk_flags": []
+    }
+  ],
+  "manifest_sha256": "53f56d87af37bd2e6c8d6eab2a33de4d4931675d26e276e3ddc7d981d3274f0c"
+}

@@ -1,0 +1,2894 @@
+{
+  "schema": 1,
+  "origin": "DMIT source snapshot, not a deployment bundle",
+  "roots": [
+    "/opt/submerge",
+    "/opt/submerge-topology",
+    "/opt/submerge-routing",
+    "/opt/submerge-client-policy",
+    "/opt/submerge-user-access",
+    "/opt/submerge-edge",
+    "/opt/submerge-security-center",
+    "/opt/submerge-staging",
+    "/opt/sg-traffic-dashboard",
+    "/opt/sg-traffic-dashboard-expiry-prod",
+    "/opt/static-connection-events",
+    "/opt/user-daily-traffic",
+    "/opt/security-mail-alerts",
+    "/opt/paoluz-pools",
+    "/opt/ledger-system",
+    "/usr/local/lib/lazycat-edge"
+  ],
+  "file_count": 286,
+  "total_bytes": 3940622,
+  "files": [
+    {
+      "path": "opt/ledger-system/README.md",
+      "bytes": 4411,
+      "sha256": "15f9b88b9ea8ce2883aa6b87e4030261984017ee8d799bc16d01365c8bd57056",
+      "source_bytes": 4411,
+      "source_sha256": "15f9b88b9ea8ce2883aa6b87e4030261984017ee8d799bc16d01365c8bd57056",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/app.py",
+      "bytes": 59109,
+      "sha256": "ff4899c087b69acc0c342ff0cf346804bc7eda805d78848a400b29d9b24bf4f7",
+      "source_bytes": 59109,
+      "source_sha256": "ff4899c087b69acc0c342ff0cf346804bc7eda805d78848a400b29d9b24bf4f7",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/deploy/backup_db.py",
+      "bytes": 1394,
+      "sha256": "531b551ded4d221eaea8cbc103dba15419a44f9352257b155e8f380b9d04586c",
+      "source_bytes": 1394,
+      "source_sha256": "531b551ded4d221eaea8cbc103dba15419a44f9352257b155e8f380b9d04586c",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/deploy/bootstrap_env.py",
+      "bytes": 1036,
+      "sha256": "9528cf64ca07a890675a5615d65ea14f11db9f2fec83764d2b8e33506df07ed3",
+      "source_bytes": 1036,
+      "source_sha256": "9528cf64ca07a890675a5615d65ea14f11db9f2fec83764d2b8e33506df07ed3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/deploy/ledger-cert-renew.service",
+      "bytes": 194,
+      "sha256": "5b8298755cee2eafa174cc242ec93443844ea011a0823dac4a3bc4bcb71ac5fe",
+      "source_bytes": 194,
+      "source_sha256": "5b8298755cee2eafa174cc242ec93443844ea011a0823dac4a3bc4bcb71ac5fe",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/deploy/ledger-cert-renew.timer",
+      "bytes": 207,
+      "sha256": "0aa95311e72069d8900ae5aba19ea4aac962125e7faf8692eed4b172a4ab3983",
+      "source_bytes": 207,
+      "source_sha256": "0aa95311e72069d8900ae5aba19ea4aac962125e7faf8692eed4b172a4ab3983",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/deploy/ledger-system.service",
+      "bytes": 533,
+      "sha256": "48bd159d82c5915a018f274727c7bc1263d34bca0848e003e84e02dedbd91925",
+      "source_bytes": 533,
+      "source_sha256": "48bd159d82c5915a018f274727c7bc1263d34bca0848e003e84e02dedbd91925",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/deploy/nginx-bootstrap.conf",
+      "bytes": 270,
+      "sha256": "493d2e8bef5af6164b221825f45e4d13cd394d6eb5b5d089db949a170c17f07b",
+      "source_bytes": 270,
+      "source_sha256": "493d2e8bef5af6164b221825f45e4d13cd394d6eb5b5d089db949a170c17f07b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/deploy/nginx.conf",
+      "bytes": 1085,
+      "sha256": "57eca458d8a225e5b9184f51fc0c37828c23efaada777e150a4e59be22bcdb48",
+      "source_bytes": 1085,
+      "source_sha256": "57eca458d8a225e5b9184f51fc0c37828c23efaada777e150a4e59be22bcdb48",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/deploy/start_formal_20261013.py",
+      "bytes": 1239,
+      "sha256": "13ae3ca55a57cf27134a57e51096f48ab1f46defccf7d3f17e575e963a28fb60",
+      "source_bytes": 1239,
+      "source_sha256": "13ae3ca55a57cf27134a57e51096f48ab1f46defccf7d3f17e575e963a28fb60",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/ingest.py",
+      "bytes": 6444,
+      "sha256": "1ebba154c887f891b08ed36647b7d3986a2a19b139f99f26ebb8c84c9b650527",
+      "source_bytes": 6444,
+      "source_sha256": "1ebba154c887f891b08ed36647b7d3986a2a19b139f99f26ebb8c84c9b650527",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/requirements.txt",
+      "bytes": 66,
+      "sha256": "fb9bad05eb357de4b4d2a98160bf65b59e54a8d4b44eb86e608c7ab5efb7401c",
+      "source_bytes": 66,
+      "source_sha256": "fb9bad05eb357de4b4d2a98160bf65b59e54a8d4b44eb86e608c7ab5efb7401c",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/static/app.js",
+      "bytes": 8313,
+      "sha256": "db3b1353c79df8a3ba020355876154c35d6c880793ea9705478b3a645bc89cd3",
+      "source_bytes": 8313,
+      "source_sha256": "db3b1353c79df8a3ba020355876154c35d6c880793ea9705478b3a645bc89cd3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/static/manifest.webmanifest",
+      "bytes": 523,
+      "sha256": "cb4563b1b127c4f1f3814c21469809fd832d04fc542dee319705cf8e21fe2e18",
+      "source_bytes": 523,
+      "source_sha256": "cb4563b1b127c4f1f3814c21469809fd832d04fc542dee319705cf8e21fe2e18",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/static/style.css",
+      "bytes": 12228,
+      "sha256": "47f4ac4eff3bf256d2a024f6f397f07d0b5a3aff3ca111bfb0f11d0f7a9c4d01",
+      "source_bytes": 12228,
+      "source_sha256": "47f4ac4eff3bf256d2a024f6f397f07d0b5a3aff3ca111bfb0f11d0f7a9c4d01",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/static/sw.js",
+      "bytes": 227,
+      "sha256": "bde4037a4f87d5482112e1ce2fc248bd983295c143c55cc49756778d885febf0",
+      "source_bytes": 227,
+      "source_sha256": "bde4037a4f87d5482112e1ce2fc248bd983295c143c55cc49756778d885febf0",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/base.html",
+      "bytes": 4161,
+      "sha256": "fea74a80e46c16cd3d2eaca0814d538aacbde709a10d08c6dbdd5a9200537aa7",
+      "source_bytes": 4161,
+      "source_sha256": "fea74a80e46c16cd3d2eaca0814d538aacbde709a10d08c6dbdd5a9200537aa7",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/bill_form.html",
+      "bytes": 2093,
+      "sha256": "ab88a58c1050525dc5516ec20e2f82cac7688c30a852ff55bbb22d05684e40af",
+      "source_bytes": 2093,
+      "source_sha256": "ab88a58c1050525dc5516ec20e2f82cac7688c30a852ff55bbb22d05684e40af",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/bills.html",
+      "bytes": 3016,
+      "sha256": "79d377850e5c8d3097eebfae61e89bbecefd63405773c7bc8b0551ab7e912e17",
+      "source_bytes": 3016,
+      "source_sha256": "79d377850e5c8d3097eebfae61e89bbecefd63405773c7bc8b0551ab7e912e17",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/budgets.html",
+      "bytes": 1695,
+      "sha256": "8499dba9fd45e1e9c3f073808e6cbfad78a9557fc507ab54e9909bf6d3100265",
+      "source_bytes": 1695,
+      "source_sha256": "8499dba9fd45e1e9c3f073808e6cbfad78a9557fc507ab54e9909bf6d3100265",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/categories.html",
+      "bytes": 2149,
+      "sha256": "5311e3636ba4a930726c1ade9820136dba76af6dd4b7a3062b3b0623503de846",
+      "source_bytes": 2149,
+      "source_sha256": "5311e3636ba4a930726c1ade9820136dba76af6dd4b7a3062b3b0623503de846",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/dashboard.html",
+      "bytes": 8679,
+      "sha256": "8f7ad86cbc00db076c9af9845bea6c4b210ae1bd1ce8f71b4810ab2b7d8018e2",
+      "source_bytes": 8679,
+      "source_sha256": "8f7ad86cbc00db076c9af9845bea6c4b210ae1bd1ce8f71b4810ab2b7d8018e2",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/login.html",
+      "bytes": 1470,
+      "sha256": "c44565db38af420e6056077df00798107a7e9fa07cafa70d392a7b0bc20ab024",
+      "source_bytes": 1470,
+      "source_sha256": "c44565db38af420e6056077df00798107a7e9fa07cafa70d392a7b0bc20ab024",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/recover.html",
+      "bytes": 1403,
+      "sha256": "ca5d69150bb4e02288bf5fbac7bf24406ca4b62b13aa1a9a198dbc23a023ffb1",
+      "source_bytes": 1403,
+      "source_sha256": "ca5d69150bb4e02288bf5fbac7bf24406ca4b62b13aa1a9a198dbc23a023ffb1",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/settings.html",
+      "bytes": 2393,
+      "sha256": "7640866d1f1da4d3e8376b69f0ebc73fc3382eb0b9f68b6c8716a01b75dcaaa2",
+      "source_bytes": 2393,
+      "source_sha256": "7640866d1f1da4d3e8376b69f0ebc73fc3382eb0b9f68b6c8716a01b75dcaaa2",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/setup.html",
+      "bytes": 1706,
+      "sha256": "38baea79b0192f7d3a50811631c3a014ac425d78e2d5acd17cc6ea04cb70447b",
+      "source_bytes": 1706,
+      "source_sha256": "38baea79b0192f7d3a50811631c3a014ac425d78e2d5acd17cc6ea04cb70447b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/templates/tags.html",
+      "bytes": 1456,
+      "sha256": "752ae50705fb98e7e6fee5c808295070e96c7ea01dff998bf0505c0643308d18",
+      "source_bytes": 1456,
+      "source_sha256": "752ae50705fb98e7e6fee5c808295070e96c7ea01dff998bf0505c0643308d18",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/ledger-system/wsgi.py",
+      "bytes": 55,
+      "sha256": "2a9faa889195efd4a2bfde52aeb0390f449cb35bc9eb11ad54429fc3f7884ee8",
+      "source_bytes": 55,
+      "source_sha256": "2a9faa889195efd4a2bfde52aeb0390f449cb35bc9eb11ad54429fc3f7884ee8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/paoluz-pools/continuous_qualification.py",
+      "bytes": 19142,
+      "sha256": "73b9220b331e54c9606d2b897f033412519f74ed25990bea9f6b5b1607897800",
+      "source_bytes": 19142,
+      "source_sha256": "73b9220b331e54c9606d2b897f033412519f74ed25990bea9f6b5b1607897800",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/paoluz-pools/current_authority_reader.py",
+      "bytes": 18464,
+      "sha256": "1de67d8fc1ee7fff95c949f7008446946defe5046151d1aa4eb83fba935726fe",
+      "source_bytes": 18464,
+      "source_sha256": "1de67d8fc1ee7fff95c949f7008446946defe5046151d1aa4eb83fba935726fe",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/paoluz-pools/full_graph_cache.py",
+      "bytes": 15077,
+      "sha256": "dbf3e4431b4153fded9e1b0fcf253db3f2e9edd50ea8a7a72456fb96fd748e9e",
+      "source_bytes": 15077,
+      "source_sha256": "dbf3e4431b4153fded9e1b0fcf253db3f2e9edd50ea8a7a72456fb96fd748e9e",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/paoluz-pools/paoluz_cache_legacy.py",
+      "bytes": 13445,
+      "sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "source_bytes": 13445,
+      "source_sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/paoluz-pools/pool_control.py",
+      "bytes": 5430,
+      "sha256": "9a0a1fb3068e5977b80809cea62b118896fc35be15686fc2001aab2a1b95f815",
+      "source_bytes": 5430,
+      "source_sha256": "9a0a1fb3068e5977b80809cea62b118896fc35be15686fc2001aab2a1b95f815",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/paoluz-pools/pool_native_probe.py",
+      "bytes": 1723,
+      "sha256": "e0952f613b18eb79c18a49ddf8f02ab082945383b5f496e6a64fc9daf3fb8b24",
+      "source_bytes": 1723,
+      "source_sha256": "e0952f613b18eb79c18a49ddf8f02ab082945383b5f496e6a64fc9daf3fb8b24",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/paoluz-pools/provider_pool.py",
+      "bytes": 14415,
+      "sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "source_bytes": 14415,
+      "source_sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/README.md",
+      "bytes": 13157,
+      "sha256": "29142aa445c76305533c5fc6e3d30afd0aa2c01cc4ec6925ca33e4163b7d8446",
+      "source_bytes": 13157,
+      "source_sha256": "29142aa445c76305533c5fc6e3d30afd0aa2c01cc4ec6925ca33e4163b7d8446",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/alerts.py",
+      "bytes": 32248,
+      "sha256": "a08292702d46e3fcb53d22f32eb6126e3b04c8c76193f245f7b7d5c847faef9c",
+      "source_bytes": 32248,
+      "source_sha256": "a08292702d46e3fcb53d22f32eb6126e3b04c8c76193f245f7b7d5c847faef9c",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/bt_policy.py",
+      "bytes": 3824,
+      "sha256": "85127c804f66fc319c6d9c02d9d3482fbcfd535852d56ffc72e95cca3d4a7890",
+      "source_bytes": 3824,
+      "source_sha256": "85127c804f66fc319c6d9c02d9d3482fbcfd535852d56ffc72e95cca3d4a7890",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/confirmed_watcher.py",
+      "bytes": 15794,
+      "sha256": "4c7a2e9ace5ccd8224ae11aa06ad8a6ef542d964dd3e4ba1f8680b5ba4148a7c",
+      "source_bytes": 15794,
+      "source_sha256": "4c7a2e9ace5ccd8224ae11aa06ad8a6ef542d964dd3e4ba1f8680b5ba4148a7c",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/deploy_bt_policy.py",
+      "bytes": 8055,
+      "sha256": "1dd2f0d72026b726078a0724caa7ae62ee2dc3d74426499599cd0eb6905d5777",
+      "source_bytes": 8055,
+      "source_sha256": "1dd2f0d72026b726078a0724caa7ae62ee2dc3d74426499599cd0eb6905d5777",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/enable_sui_context_logging.py",
+      "bytes": 4059,
+      "sha256": "55cdcfa0906427209581619850a96d90099d828d37cce18d6c44f135d53d68a6",
+      "source_bytes": 4059,
+      "source_sha256": "55cdcfa0906427209581619850a96d90099d828d37cce18d6c44f135d53d68a6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/quarantine.py",
+      "bytes": 1365,
+      "sha256": "a1835396ea683d7410c24b1158a5759db18d4b9ec411d771348637415af4dc56",
+      "source_bytes": 1365,
+      "source_sha256": "a1835396ea683d7410c24b1158a5759db18d4b9ec411d771348637415af4dc56",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/rollback_bt_policy.py",
+      "bytes": 2819,
+      "sha256": "b8d0b0ef5596eb986f0f9c105a3e813d481c7b5abfbb34f1f5303b1241de4eb2",
+      "source_bytes": 2819,
+      "source_sha256": "b8d0b0ef5596eb986f0f9c105a3e813d481c7b5abfbb34f1f5303b1241de4eb2",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/security-bt-quarantine.service",
+      "bytes": 447,
+      "sha256": "2ab914b8de4bd8c61dbca58573e4591eec246571234ce029c813f22623506c8d",
+      "source_bytes": 447,
+      "source_sha256": "2ab914b8de4bd8c61dbca58573e4591eec246571234ce029c813f22623506c8d",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/security-confirmed-events.service",
+      "bytes": 560,
+      "sha256": "185f8486d75415ff64d95b725c4878cc38c817921be18a907ea451ff323fde8a",
+      "source_bytes": 560,
+      "source_sha256": "185f8486d75415ff64d95b725c4878cc38c817921be18a907ea451ff323fde8a",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/stage_info_bt.py",
+      "bytes": 4530,
+      "sha256": "4304fc3f881a93e026da1397f113113f81879f5050fe08471fa27a61052574fa",
+      "source_bytes": 4530,
+      "source_sha256": "4304fc3f881a93e026da1397f113113f81879f5050fe08471fa27a61052574fa",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/ui/violation-mail-ui.css",
+      "bytes": 5427,
+      "sha256": "87949d74557fa727c93118935cd208fd375f91ce9e01f096b0bc7520d1db605e",
+      "source_bytes": 5427,
+      "source_sha256": "87949d74557fa727c93118935cd208fd375f91ce9e01f096b0bc7520d1db605e",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/ui/violation-mail-ui.js",
+      "bytes": 13651,
+      "sha256": "40350fdcee21ada18f786b7659c6937c91b17de291d7a0a321bf5c0c907b64d0",
+      "source_bytes": 13651,
+      "source_sha256": "40350fdcee21ada18f786b7659c6937c91b17de291d7a0a321bf5c0c907b64d0",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/security-mail-alerts/violation_mail_plugin.py",
+      "bytes": 7354,
+      "sha256": "d83beb54cc10254d70667ac30e18f8b8479a6ff356651aac99b71d6226ad8500",
+      "source_bytes": 7354,
+      "source_sha256": "d83beb54cc10254d70667ac30e18f8b8479a6ff356651aac99b71d6226ad8500",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/audit_prod_api.py",
+      "bytes": 1235,
+      "sha256": "65e7d60567d03e628712ef376cc6b4c47933aa9f33a1c1009438b39763079500",
+      "source_bytes": 1235,
+      "source_sha256": "65e7d60567d03e628712ef376cc6b4c47933aa9f33a1c1009438b39763079500",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/expiry-ui.js",
+      "bytes": 4271,
+      "sha256": "be859c76daf057b2172d54ff4fd190be4ae80c90051fb485a46cbe8238af90f3",
+      "source_bytes": 4271,
+      "source_sha256": "be859c76daf057b2172d54ff4fd190be4ae80c90051fb485a46cbe8238af90f3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/expiry_policy.py",
+      "bytes": 1978,
+      "sha256": "728a9225a7162dba7b7d58c217e602dc8b80f81cde10ea18cb781135f2676476",
+      "source_bytes": 1978,
+      "source_sha256": "728a9225a7162dba7b7d58c217e602dc8b80f81cde10ea18cb781135f2676476",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/expiry_stage.py",
+      "bytes": 16806,
+      "sha256": "ed27d079f547128fdd66767dba79d9599ec9f164629824f57ad145cd05eda657",
+      "source_bytes": 16806,
+      "source_sha256": "ed27d079f547128fdd66767dba79d9599ec9f164629824f57ad145cd05eda657",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/network_stats.py",
+      "bytes": 37200,
+      "sha256": "6ee32a53d05784928b62f9f72f2ee05f733d41def8353f45699dfd58c4b7f9a6",
+      "source_bytes": 37200,
+      "source_sha256": "6ee32a53d05784928b62f9f72f2ee05f733d41def8353f45699dfd58c4b7f9a6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/network_stats_legacy.py",
+      "bytes": 47805,
+      "sha256": "b7bfb3c9af2beff9f6f9d3ffef2a97c3b34847fbaf6305b3e1d80fca7893bcde",
+      "source_bytes": 47805,
+      "source_sha256": "b7bfb3c9af2beff9f6f9d3ffef2a97c3b34847fbaf6305b3e1d80fca7893bcde",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/prod_capture_once.py",
+      "bytes": 1236,
+      "sha256": "70b3553e47bd23fbc2ccee300f4c9475c65cf54c87935e65cef3c1fed39a814b",
+      "source_bytes": 1236,
+      "source_sha256": "70b3553e47bd23fbc2ccee300f4c9475c65cf54c87935e65cef3c1fed39a814b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/prod_collector.py",
+      "bytes": 2825,
+      "sha256": "ffbd975d78147648817822c166e5d5d25b71c17e742f3912b769a146696744cf",
+      "source_bytes": 2825,
+      "source_sha256": "ffbd975d78147648817822c166e5d5d25b71c17e742f3912b769a146696744cf",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/prod_dashboard.py",
+      "bytes": 4483,
+      "sha256": "9a8758d165b0c44ba94b5ddfeba97907a8718fb70f3aaf8fbc44974a493b65c3",
+      "source_bytes": 4483,
+      "source_sha256": "9a8758d165b0c44ba94b5ddfeba97907a8718fb70f3aaf8fbc44974a493b65c3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/revision_inventory.py",
+      "bytes": 9342,
+      "sha256": "939d4aa5d61d64dc35310eb9e40ebb237b0290899421ad0db5673530cf08663b",
+      "source_bytes": 9342,
+      "source_sha256": "939d4aa5d61d64dc35310eb9e40ebb237b0290899421ad0db5673530cf08663b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/topology-archive.js",
+      "bytes": 16380,
+      "sha256": "b00645bbbfd0e2c45d8ce0e6900134916c454dbdff7cfa61d523b0ff65dae5ae",
+      "source_bytes": 16380,
+      "source_sha256": "b00645bbbfd0e2c45d8ce0e6900134916c454dbdff7cfa61d523b0ff65dae5ae",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/topology_archive.py",
+      "bytes": 29817,
+      "sha256": "8a29cfec047d9d510d6e367a3745021356f2af23059c5cfdaee19f45e3bf1f32",
+      "source_bytes": 29817,
+      "source_sha256": "8a29cfec047d9d510d6e367a3745021356f2af23059c5cfdaee19f45e3bf1f32",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/topology_live_api.py",
+      "bytes": 12563,
+      "sha256": "fb63aaa32a67b9d83ad06f61d02316b90b187499026a63ca99fdb916e14154da",
+      "source_bytes": 12563,
+      "source_sha256": "fb63aaa32a67b9d83ad06f61d02316b90b187499026a63ca99fdb916e14154da",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/topology_prod_collector.py",
+      "bytes": 4047,
+      "sha256": "07f8a36a10e27225929aff6d40699782cd30ccea5a7f535a3fe2b559eba3f591",
+      "source_bytes": 4047,
+      "source_sha256": "07f8a36a10e27225929aff6d40699782cd30ccea5a7f535a3fe2b559eba3f591",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard-expiry-prod/topology_prod_dashboard.py",
+      "bytes": 7136,
+      "sha256": "ea935ad633210e15442fb78a435733eb147748c8535fe9f8eefc78051c783cb8",
+      "source_bytes": 7136,
+      "source_sha256": "ea935ad633210e15442fb78a435733eb147748c8535fe9f8eefc78051c783cb8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/app.py",
+      "bytes": 50648,
+      "sha256": "c0a94da543e0c22324b46633f75537031b7f8dd4b68d0e827c01e35db6a35812",
+      "source_bytes": 50648,
+      "source_sha256": "c0a94da543e0c22324b46633f75537031b7f8dd4b68d0e827c01e35db6a35812",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/collector.py",
+      "bytes": 17810,
+      "sha256": "76667c4f4901076e83025f84221f1495e3bc2aa55653702576d25d41c236c683",
+      "source_bytes": 17810,
+      "source_sha256": "76667c4f4901076e83025f84221f1495e3bc2aa55653702576d25d41c236c683",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/host-traffic-sample.py",
+      "bytes": 4732,
+      "sha256": "093389b81c4efb7392279ed7564a70f8914a573b6039da141f06b7aaa54a7e1f",
+      "source_bytes": 4732,
+      "source_sha256": "093389b81c4efb7392279ed7564a70f8914a573b6039da141f06b7aaa54a7e1f",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/network_stats.py",
+      "bytes": 36387,
+      "sha256": "9f31d8d1737a22a6abe72357f67f47362250300ebff4677d199b5ba63c8a339f",
+      "source_bytes": 36387,
+      "source_sha256": "9f31d8d1737a22a6abe72357f67f47362250300ebff4677d199b5ba63c8a339f",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/network_stats_legacy.py",
+      "bytes": 47805,
+      "sha256": "b7bfb3c9af2beff9f6f9d3ffef2a97c3b34847fbaf6305b3e1d80fca7893bcde",
+      "source_bytes": 47805,
+      "source_sha256": "b7bfb3c9af2beff9f6f9d3ffef2a97c3b34847fbaf6305b3e1d80fca7893bcde",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/revision_inventory.py",
+      "bytes": 9342,
+      "sha256": "939d4aa5d61d64dc35310eb9e40ebb237b0290899421ad0db5673530cf08663b",
+      "source_bytes": 9342,
+      "source_sha256": "939d4aa5d61d64dc35310eb9e40ebb237b0290899421ad0db5673530cf08663b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/static-egress-collector.py",
+      "bytes": 21523,
+      "sha256": "14ddb63308c8175dd120fa40fc7bc88701f5417a6f1a22429fa5b7e6dca29c17",
+      "source_bytes": 21523,
+      "source_sha256": "14ddb63308c8175dd120fa40fc7bc88701f5417a6f1a22429fa5b7e6dca29c17",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/static-retention.py",
+      "bytes": 22158,
+      "sha256": "27b292fad798235cd275cbd7d6e28f6c37d58136233484ecaae4f506f88be1da",
+      "source_bytes": 22158,
+      "source_sha256": "27b292fad798235cd275cbd7d6e28f6c37d58136233484ecaae4f506f88be1da",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/static_finalization.py",
+      "bytes": 17370,
+      "sha256": "3ed801579828d2cd95f3e3696c8e73571ec44fae23053b390df3e3b1d6d03ca2",
+      "source_bytes": 17370,
+      "source_sha256": "3ed801579828d2cd95f3e3696c8e73571ec44fae23053b390df3e3b1d6d03ca2",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/traffic-page-v3.html",
+      "bytes": 52437,
+      "sha256": "76f5cd947858fa3c34c39647d7de5338aeb169bcdf7d5a63f7c39acd37e74923",
+      "source_bytes": 52437,
+      "source_sha256": "76f5cd947858fa3c34c39647d7de5338aeb169bcdf7d5a63f7c39acd37e74923",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/sg-traffic-dashboard/whole-vps-collector.py",
+      "bytes": 17040,
+      "sha256": "71d17c064bcd481e918ec105425917ddeaac2ff5712a5a4c3fb41a02c1c5de48",
+      "source_bytes": 17040,
+      "source_sha256": "71d17c064bcd481e918ec105425917ddeaac2ff5712a5a4c3fb41a02c1c5de48",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/static-connection-events/connection_events_pb2.py",
+      "bytes": 3591,
+      "sha256": "5ac5e3a7ceafab91daa31b29360d9af8e4e84957021a02b85ecf4311a7b33a08",
+      "source_bytes": 3591,
+      "source_sha256": "5ac5e3a7ceafab91daa31b29360d9af8e4e84957021a02b85ecf4311a7b33a08",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/static-connection-events/connection_events_pb2_grpc.py",
+      "bytes": 4297,
+      "sha256": "ad3d12873452aefd2316359f408c98d83df93b398633ec4c8dd49cb1e5d9ef53",
+      "source_bytes": 4297,
+      "source_sha256": "ad3d12873452aefd2316359f408c98d83df93b398633ec4c8dd49cb1e5d9ef53",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/static-connection-events/network_stats.py",
+      "bytes": 47805,
+      "sha256": "b7bfb3c9af2beff9f6f9d3ffef2a97c3b34847fbaf6305b3e1d80fca7893bcde",
+      "source_bytes": 47805,
+      "source_sha256": "b7bfb3c9af2beff9f6f9d3ffef2a97c3b34847fbaf6305b3e1d80fca7893bcde",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/static-connection-events/subscriber.py",
+      "bytes": 10048,
+      "sha256": "e45f7d7ae349c4735b145950a6fa6bb42ae41c82f1ec9db0987b8a745f255a16",
+      "source_bytes": 10048,
+      "source_sha256": "e45f7d7ae349c4735b145950a6fa6bb42ae41c82f1ec9db0987b8a745f255a16",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/client_policy.py",
+      "bytes": 18521,
+      "sha256": "ec5e482b2c11ff1e1e4426e748797aa904c6cd6d31d4166e21213d97d9a9fce0",
+      "source_bytes": 18521,
+      "source_sha256": "ec5e482b2c11ff1e1e4426e748797aa904c6cd6d31d4166e21213d97d9a9fce0",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/domain_destination_override.py",
+      "bytes": 4555,
+      "sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "source_bytes": 4555,
+      "source_sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/edge_profile.py",
+      "bytes": 15999,
+      "sha256": "bab3c34417302bf347b9840e4dc2f4843cacb8174212fb39b4de6715a878e87a",
+      "source_bytes": 15999,
+      "source_sha256": "bab3c34417302bf347b9840e4dc2f4843cacb8174212fb39b4de6715a878e87a",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/edge_profile_v2.py",
+      "bytes": 12615,
+      "sha256": "3f155b8ab27adfa878974a8fec3f6e174eaffcd5f8fc13a35a1061942f53d44f",
+      "source_bytes": 12615,
+      "source_sha256": "3f155b8ab27adfa878974a8fec3f6e174eaffcd5f8fc13a35a1061942f53d44f",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/full_graph_cache.py",
+      "bytes": 18863,
+      "sha256": "1423fdb1e4d13334c91cf8a37f5799decd25b8815c600d89038933f3b298dc65",
+      "source_bytes": 18863,
+      "source_sha256": "1423fdb1e4d13334c91cf8a37f5799decd25b8815c600d89038933f3b298dc65",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/legacy_deadline.py",
+      "bytes": 1985,
+      "sha256": "a01de2ebf4a7707bb1df701bf02748101c9c1ced3a57ba69b91b9f2190cda87c",
+      "source_bytes": 1985,
+      "source_sha256": "a01de2ebf4a7707bb1df701bf02748101c9c1ced3a57ba69b91b9f2190cda87c",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/network_runtime.py",
+      "bytes": 16202,
+      "sha256": "8d763f21f730bf826978f9ff84e2cf6a9da38216346a676e6b02c680114cb513",
+      "source_bytes": 16202,
+      "source_sha256": "8d763f21f730bf826978f9ff84e2cf6a9da38216346a676e6b02c680114cb513",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/network_runtime_legacy.py",
+      "bytes": 28080,
+      "sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "source_bytes": 28080,
+      "source_sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/paoluz_cache_legacy.py",
+      "bytes": 13445,
+      "sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "source_bytes": 13445,
+      "source_sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/provider_pool.py",
+      "bytes": 14415,
+      "sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "source_bytes": 14415,
+      "source_sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/routing_client_v4.py",
+      "bytes": 35379,
+      "sha256": "eb15f7f906ca5919cbea74f71a4b25d907e37d769425123569ed4d32eadb0ece",
+      "source_bytes": 35379,
+      "source_sha256": "eb15f7f906ca5919cbea74f71a4b25d907e37d769425123569ed4d32eadb0ece",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/server_route_policy.py",
+      "bytes": 14241,
+      "sha256": "d6f0c64f4e61864ff1db7b92552ccf76696a421a4c7efa0aab5ad5dda74a34d3",
+      "source_bytes": 14241,
+      "source_sha256": "d6f0c64f4e61864ff1db7b92552ccf76696a421a4c7efa0aab5ad5dda74a34d3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/server_route_policy_legacy.py",
+      "bytes": 28078,
+      "sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "source_bytes": 28078,
+      "source_sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/sg_egress.py",
+      "bytes": 5578,
+      "sha256": "785a921b5ff9f717c9dee6592f738840742fa18fddcd5a9846fab769d87c85cd",
+      "source_bytes": 5578,
+      "source_sha256": "785a921b5ff9f717c9dee6592f738840742fa18fddcd5a9846fab769d87c85cd",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/sg_health.py",
+      "bytes": 5199,
+      "sha256": "4d0feced07e9ba682c1f359fdd539c89ea1c9b9874694836990ec540e44a5b64",
+      "source_bytes": 5199,
+      "source_sha256": "4d0feced07e9ba682c1f359fdd539c89ea1c9b9874694836990ec540e44a5b64",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-client-policy/transport_bridges.py",
+      "bytes": 1693,
+      "sha256": "9e446344d6def5a2b996e771f86fd5fd64a26568e170b1dc542ae076e3cb38ec",
+      "source_bytes": 1693,
+      "source_sha256": "9e446344d6def5a2b996e771f86fd5fd64a26568e170b1dc542ae076e3cb38ec",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/ai_health_v4.py",
+      "bytes": 4852,
+      "sha256": "d78ca4fd00bafa7a508a635c2fccb40e02cc3521f30eca25ac13b4fea6ba3858",
+      "source_bytes": 4852,
+      "source_sha256": "d78ca4fd00bafa7a508a635c2fccb40e02cc3521f30eca25ac13b4fea6ba3858",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_ai_policy.py",
+      "bytes": 17451,
+      "sha256": "6f97b6efd8d6247023c48b56f80300384635569866b1cf83a08097c20cdbe8e3",
+      "source_bytes": 17451,
+      "source_sha256": "6f97b6efd8d6247023c48b56f80300384635569866b1cf83a08097c20cdbe8e3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_ai_policy_v2.py",
+      "bytes": 11048,
+      "sha256": "8b4fe25931bfaf73c206c1fd4bcf43f9e9dc7c312c74968c97d56ff7db3d1970",
+      "source_bytes": 11048,
+      "source_sha256": "8b4fe25931bfaf73c206c1fd4bcf43f9e9dc7c312c74968c97d56ff7db3d1970",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_ai_policy_v3.py",
+      "bytes": 9637,
+      "sha256": "feae40a7833f83a49afa0d32e4687c0edb9213e717875919faa3f21b16242df2",
+      "source_bytes": 9637,
+      "source_sha256": "feae40a7833f83a49afa0d32e4687c0edb9213e717875919faa3f21b16242df2",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_ai_policy_v4.py",
+      "bytes": 10879,
+      "sha256": "ecf65836e5d9293bc3a212d206080e85a398fa3758ec036c9d20662783b31900",
+      "source_bytes": 10879,
+      "source_sha256": "ecf65836e5d9293bc3a212d206080e85a398fa3758ec036c9d20662783b31900",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_apply.py",
+      "bytes": 53017,
+      "sha256": "434e378d1994229fe034f626d98f6191bbb5ce35e8aa7d00a9cb851e3346ba72",
+      "source_bytes": 53017,
+      "source_sha256": "434e378d1994229fe034f626d98f6191bbb5ce35e8aa7d00a9cb851e3346ba72",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_bundle.py",
+      "bytes": 18946,
+      "sha256": "38532eb3373ff533ad5e0d2581eae793727d4726b19e84539d7da19ee88fbdca",
+      "source_bytes": 18946,
+      "source_sha256": "38532eb3373ff533ad5e0d2581eae793727d4726b19e84539d7da19ee88fbdca",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_controller.py",
+      "bytes": 27278,
+      "sha256": "a38dc37bdd2fbd7a479ae4c0fd29bcbaf58e2f61dfab11c53585dfe375992161",
+      "source_bytes": 27278,
+      "source_sha256": "a38dc37bdd2fbd7a479ae4c0fd29bcbaf58e2f61dfab11c53585dfe375992161",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_events.py",
+      "bytes": 30024,
+      "sha256": "4c05b277e3a68cec1469649e534373f83bd9b3150626ed9143c4953eaefb2956",
+      "source_bytes": 30024,
+      "source_sha256": "4c05b277e3a68cec1469649e534373f83bd9b3150626ed9143c4953eaefb2956",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_logs.py",
+      "bytes": 18727,
+      "sha256": "ddf668e86bca5452b733f7db9a7c0279ab33a8864cb0f6b45d2791ef2596dae8",
+      "source_bytes": 18727,
+      "source_sha256": "ddf668e86bca5452b733f7db9a7c0279ab33a8864cb0f6b45d2791ef2596dae8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_pool_probe.py",
+      "bytes": 2170,
+      "sha256": "8c8806066f71647554378da448296904f820669c06c51803501926f6342108cd",
+      "source_bytes": 2170,
+      "source_sha256": "8c8806066f71647554378da448296904f820669c06c51803501926f6342108cd",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_probe.py",
+      "bytes": 20379,
+      "sha256": "2ad0853fc8fab09ee397266532bf48b7c3cd1c2815bd88bb052d34b40df877e9",
+      "source_bytes": 20379,
+      "source_sha256": "2ad0853fc8fab09ee397266532bf48b7c3cd1c2815bd88bb052d34b40df877e9",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/edge_status.py",
+      "bytes": 7865,
+      "sha256": "4f60c20ef9eff1022b36fe36e4a77b3d73f8559140605bae7cb107505362dac8",
+      "source_bytes": 7865,
+      "source_sha256": "4f60c20ef9eff1022b36fe36e4a77b3d73f8559140605bae7cb107505362dac8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/starhub_selection.py",
+      "bytes": 8138,
+      "sha256": "aba03639220a7b30209d17b1fb0624f4421c96a6362d2d0461a5b8ca889c96f9",
+      "source_bytes": 8138,
+      "source_sha256": "aba03639220a7b30209d17b1fb0624f4421c96a6362d2d0461a5b8ca889c96f9",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/starhub_selection_v3.py",
+      "bytes": 647,
+      "sha256": "ff46fa418198795dff53ca07d32f884838559063e7d89fc51e69f51ec4fb3e58",
+      "source_bytes": 647,
+      "source_sha256": "ff46fa418198795dff53ca07d32f884838559063e7d89fc51e69f51ec4fb3e58",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-edge/starhub_selection_v4.py",
+      "bytes": 1543,
+      "sha256": "e5ae91ccfebbb8c074a429db1370bfe744b6f839df6e86b0df391f8dbdd1bec4",
+      "source_bytes": 1543,
+      "source_sha256": "e5ae91ccfebbb8c074a429db1370bfe744b6f839df6e86b0df391f8dbdd1bec4",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/ai_health_v4.py",
+      "bytes": 4852,
+      "sha256": "d78ca4fd00bafa7a508a635c2fccb40e02cc3521f30eca25ac13b4fea6ba3858",
+      "source_bytes": 4852,
+      "source_sha256": "d78ca4fd00bafa7a508a635c2fccb40e02cc3521f30eca25ac13b4fea6ba3858",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/bootstrap_current.py",
+      "bytes": 3789,
+      "sha256": "6285b116c4f962c27722417447ac27083d2fb82283b3e937162209af993390f9",
+      "source_bytes": 3789,
+      "source_sha256": "6285b116c4f962c27722417447ac27083d2fb82283b3e937162209af993390f9",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/bootstrap_revision.py",
+      "bytes": 7933,
+      "sha256": "f4661a0564dee15d7d41c78ecbca1572457b884e8da099680c6422c5e5d30bae",
+      "source_bytes": 7933,
+      "source_sha256": "f4661a0564dee15d7d41c78ecbca1572457b884e8da099680c6422c5e5d30bae",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/business_control.py",
+      "bytes": 2607,
+      "sha256": "1d26f035017e0e94bc281b6dab08904daef883a5648c9c6c954bede271b3cf4b",
+      "source_bytes": 2607,
+      "source_sha256": "1d26f035017e0e94bc281b6dab08904daef883a5648c9c6c954bede271b3cf4b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/client_bootstrap.py",
+      "bytes": 31857,
+      "sha256": "bdaeb6ac766d07f892c67447fbd4f992babbb010c67124de90f74444833dd618",
+      "source_bytes": 31863,
+      "source_sha256": "613f7530e97bfbb8e74a6ce6a898e9985ba75158fd75100a330369e52405c429",
+      "mode": "0o644",
+      "redacted_fields": [
+        "offline_fixture_password"
+      ],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/configure_scheduler.py",
+      "bytes": 5221,
+      "sha256": "45d294291e74b892090eae8d96b91ba219008a87b3f79c3e1a01ca11c34898fd",
+      "source_bytes": 5221,
+      "source_sha256": "45d294291e74b892090eae8d96b91ba219008a87b3f79c3e1a01ca11c34898fd",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/desired_accounts.py",
+      "bytes": 6988,
+      "sha256": "c31297c0e114f44f526c55ea0e9bebead66023f5c55402027c6f42b63a1a2dc3",
+      "source_bytes": 6988,
+      "source_sha256": "c31297c0e114f44f526c55ea0e9bebead66023f5c55402027c6f42b63a1a2dc3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/dmit-routing-reconcile.service",
+      "bytes": 720,
+      "sha256": "cb5a46fb10da26575932252a0cf79c9f582adf5c993847b1f9af99c5e0c0cf29",
+      "source_bytes": 720,
+      "source_sha256": "cb5a46fb10da26575932252a0cf79c9f582adf5c993847b1f9af99c5e0c0cf29",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/dmit-routing-reconcile.timer",
+      "bytes": 345,
+      "sha256": "88d3dcbbdda6052dcc4f4f4e52034f1510e6538bd75aa184ccb66b0eed809988",
+      "source_bytes": 345,
+      "source_sha256": "88d3dcbbdda6052dcc4f4f4e52034f1510e6538bd75aa184ccb66b0eed809988",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/dmit_topology_render.py",
+      "bytes": 12159,
+      "sha256": "4a311c82310aca15fa4156bc9c5cd7371bf04864c7dc90f248f75165f580a2c3",
+      "source_bytes": 12159,
+      "source_sha256": "4a311c82310aca15fa4156bc9c5cd7371bf04864c7dc90f248f75165f580a2c3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/domain_destination_override.py",
+      "bytes": 4555,
+      "sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "source_bytes": 4555,
+      "source_sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_ai_policy.py",
+      "bytes": 17451,
+      "sha256": "6f97b6efd8d6247023c48b56f80300384635569866b1cf83a08097c20cdbe8e3",
+      "source_bytes": 17451,
+      "source_sha256": "6f97b6efd8d6247023c48b56f80300384635569866b1cf83a08097c20cdbe8e3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_ai_policy_v2.py",
+      "bytes": 11048,
+      "sha256": "8b4fe25931bfaf73c206c1fd4bcf43f9e9dc7c312c74968c97d56ff7db3d1970",
+      "source_bytes": 11048,
+      "source_sha256": "8b4fe25931bfaf73c206c1fd4bcf43f9e9dc7c312c74968c97d56ff7db3d1970",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_ai_policy_v3.py",
+      "bytes": 9637,
+      "sha256": "feae40a7833f83a49afa0d32e4687c0edb9213e717875919faa3f21b16242df2",
+      "source_bytes": 9637,
+      "source_sha256": "feae40a7833f83a49afa0d32e4687c0edb9213e717875919faa3f21b16242df2",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_ai_policy_v4.py",
+      "bytes": 10879,
+      "sha256": "ecf65836e5d9293bc3a212d206080e85a398fa3758ec036c9d20662783b31900",
+      "source_bytes": 10879,
+      "source_sha256": "ecf65836e5d9293bc3a212d206080e85a398fa3758ec036c9d20662783b31900",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_apply.py",
+      "bytes": 53017,
+      "sha256": "434e378d1994229fe034f626d98f6191bbb5ce35e8aa7d00a9cb851e3346ba72",
+      "source_bytes": 53017,
+      "source_sha256": "434e378d1994229fe034f626d98f6191bbb5ce35e8aa7d00a9cb851e3346ba72",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_bundle.py",
+      "bytes": 18946,
+      "sha256": "38532eb3373ff533ad5e0d2581eae793727d4726b19e84539d7da19ee88fbdca",
+      "source_bytes": 18946,
+      "source_sha256": "38532eb3373ff533ad5e0d2581eae793727d4726b19e84539d7da19ee88fbdca",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_controller.py",
+      "bytes": 27278,
+      "sha256": "a38dc37bdd2fbd7a479ae4c0fd29bcbaf58e2f61dfab11c53585dfe375992161",
+      "source_bytes": 27278,
+      "source_sha256": "a38dc37bdd2fbd7a479ae4c0fd29bcbaf58e2f61dfab11c53585dfe375992161",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_events.py",
+      "bytes": 30024,
+      "sha256": "4c05b277e3a68cec1469649e534373f83bd9b3150626ed9143c4953eaefb2956",
+      "source_bytes": 30024,
+      "source_sha256": "4c05b277e3a68cec1469649e534373f83bd9b3150626ed9143c4953eaefb2956",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_logs.py",
+      "bytes": 18727,
+      "sha256": "ddf668e86bca5452b733f7db9a7c0279ab33a8864cb0f6b45d2791ef2596dae8",
+      "source_bytes": 18727,
+      "source_sha256": "ddf668e86bca5452b733f7db9a7c0279ab33a8864cb0f6b45d2791ef2596dae8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_pool_probe.py",
+      "bytes": 2170,
+      "sha256": "8c8806066f71647554378da448296904f820669c06c51803501926f6342108cd",
+      "source_bytes": 2170,
+      "source_sha256": "8c8806066f71647554378da448296904f820669c06c51803501926f6342108cd",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/edge_status.py",
+      "bytes": 7865,
+      "sha256": "4f60c20ef9eff1022b36fe36e4a77b3d73f8559140605bae7cb107505362dac8",
+      "source_bytes": 7865,
+      "source_sha256": "4f60c20ef9eff1022b36fe36e4a77b3d73f8559140605bae7cb107505362dac8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/empty_main_guard.py",
+      "bytes": 4317,
+      "sha256": "8ef152a9682263712389e6611f5c6021ce1dbaf7767e826fd9e4ce8fcf681360",
+      "source_bytes": 4317,
+      "source_sha256": "8ef152a9682263712389e6611f5c6021ce1dbaf7767e826fd9e4ce8fcf681360",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/main_business_worker.py",
+      "bytes": 17023,
+      "sha256": "facf60ee5e03754b1c8499027a6a491835620543318583e44491522b9e8951ea",
+      "source_bytes": 17023,
+      "source_sha256": "facf60ee5e03754b1c8499027a6a491835620543318583e44491522b9e8951ea",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/main_guard.py",
+      "bytes": 6259,
+      "sha256": "6188fd101490c6281fe785e2e341a74c2a067985239bf6ad3575a78e50e8c628",
+      "source_bytes": 6259,
+      "source_sha256": "6188fd101490c6281fe785e2e341a74c2a067985239bf6ad3575a78e50e8c628",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/main_policy_cas.py",
+      "bytes": 5195,
+      "sha256": "6d44918a8a05ad1beeff2f294bb84e55566df79026ed5ef4473dee7387e2ccf6",
+      "source_bytes": 5195,
+      "source_sha256": "6d44918a8a05ad1beeff2f294bb84e55566df79026ed5ef4473dee7387e2ccf6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/network_runtime.py",
+      "bytes": 16202,
+      "sha256": "8d763f21f730bf826978f9ff84e2cf6a9da38216346a676e6b02c680114cb513",
+      "source_bytes": 16202,
+      "source_sha256": "8d763f21f730bf826978f9ff84e2cf6a9da38216346a676e6b02c680114cb513",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/network_runtime_legacy.py",
+      "bytes": 28080,
+      "sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "source_bytes": 28080,
+      "source_sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/policy_inputs.py",
+      "bytes": 6907,
+      "sha256": "36d544ff7dbb44410a7c53dc6cc372d6d0fd1def398a41148cd1c8a932bbe8a7",
+      "source_bytes": 6907,
+      "source_sha256": "36d544ff7dbb44410a7c53dc6cc372d6d0fd1def398a41148cd1c8a932bbe8a7",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/prepare_account_boot_hooks.py",
+      "bytes": 3739,
+      "sha256": "0d33e9b200f144c244eb6ef151bc9627465d3874c3f2c19b21ac5e309989f7b7",
+      "source_bytes": 3739,
+      "source_sha256": "0d33e9b200f144c244eb6ef151bc9627465d3874c3f2c19b21ac5e309989f7b7",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/prepare_actual.py",
+      "bytes": 4065,
+      "sha256": "fd49d8cf085cc018d81626121d375bdcaeab9d337bc41bf01a08044e6eee8fd5",
+      "source_bytes": 4065,
+      "source_sha256": "fd49d8cf085cc018d81626121d375bdcaeab9d337bc41bf01a08044e6eee8fd5",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/prepared_restart.py",
+      "bytes": 6429,
+      "sha256": "80d28814bf46dcee1866e35a3f8638ed4c5049c14b3dabc573257dac5ad27d99",
+      "source_bytes": 6429,
+      "source_sha256": "80d28814bf46dcee1866e35a3f8638ed4c5049c14b3dabc573257dac5ad27d99",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/raw_guard_install.py",
+      "bytes": 1657,
+      "sha256": "8d77143aacc1adabc35b930217aff4883f73752a014ff53ee38f2f8bc05d7daa",
+      "source_bytes": 1657,
+      "source_sha256": "8d77143aacc1adabc35b930217aff4883f73752a014ff53ee38f2f8bc05d7daa",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/raw_ingress_guard.py",
+      "bytes": 1508,
+      "sha256": "f0d1f7c6d4c485e1ad4a4c39698ff99e7ea4b6a5cbed2dd8e41212a070acf460",
+      "source_bytes": 1508,
+      "source_sha256": "f0d1f7c6d4c485e1ad4a4c39698ff99e7ea4b6a5cbed2dd8e41212a070acf460",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/reconcile_policy.py",
+      "bytes": 1439,
+      "sha256": "9076eafdcf0ec05ab826532d0cdd5d20b0c72e91bdade5f249cba4e942f968ee",
+      "source_bytes": 1439,
+      "source_sha256": "9076eafdcf0ec05ab826532d0cdd5d20b0c72e91bdade5f249cba4e942f968ee",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/release_main.py",
+      "bytes": 26196,
+      "sha256": "366160272fb66e606a0d587bee77fd76d65c9d2c40c33f36090dc4cd9a9177b3",
+      "source_bytes": 26196,
+      "source_sha256": "366160272fb66e606a0d587bee77fd76d65c9d2c40c33f36090dc4cd9a9177b3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/release_reconcile.py",
+      "bytes": 28266,
+      "sha256": "51f2502bb1af8d15cca77b05dfb44c14394e2fcc3c2ad617b25c933660a9b6d2",
+      "source_bytes": 28266,
+      "source_sha256": "51f2502bb1af8d15cca77b05dfb44c14394e2fcc3c2ad617b25c933660a9b6d2",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/sandbox_worker_check.py",
+      "bytes": 4644,
+      "sha256": "1c79ecf278d130a6a8510143df5d6e34fb8ab81b07aa988e66db1d9e39a547cb",
+      "source_bytes": 4644,
+      "source_sha256": "1c79ecf278d130a6a8510143df5d6e34fb8ab81b07aa988e66db1d9e39a547cb",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/server_route_policy.py",
+      "bytes": 14241,
+      "sha256": "d6f0c64f4e61864ff1db7b92552ccf76696a421a4c7efa0aab5ad5dda74a34d3",
+      "source_bytes": 14241,
+      "source_sha256": "d6f0c64f4e61864ff1db7b92552ccf76696a421a4c7efa0aab5ad5dda74a34d3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/server_route_policy_legacy.py",
+      "bytes": 28078,
+      "sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "source_bytes": 28078,
+      "source_sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/starhub_selection.py",
+      "bytes": 8138,
+      "sha256": "aba03639220a7b30209d17b1fb0624f4421c96a6362d2d0461a5b8ca889c96f9",
+      "source_bytes": 8138,
+      "source_sha256": "aba03639220a7b30209d17b1fb0624f4421c96a6362d2d0461a5b8ca889c96f9",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/starhub_selection_v3.py",
+      "bytes": 647,
+      "sha256": "ff46fa418198795dff53ca07d32f884838559063e7d89fc51e69f51ec4fb3e58",
+      "source_bytes": 647,
+      "source_sha256": "ff46fa418198795dff53ca07d32f884838559063e7d89fc51e69f51ec4fb3e58",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/starhub_selection_v4.py",
+      "bytes": 1543,
+      "sha256": "e5ae91ccfebbb8c074a429db1370bfe744b6f839df6e86b0df391f8dbdd1bec4",
+      "source_bytes": 1543,
+      "source_sha256": "e5ae91ccfebbb8c074a429db1370bfe744b6f839df6e86b0df391f8dbdd1bec4",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-routing/transport_bridges.py",
+      "bytes": 1693,
+      "sha256": "9e446344d6def5a2b996e771f86fd5fd64a26568e170b1dc542ae076e3cb38ec",
+      "source_bytes": 1693,
+      "source_sha256": "9e446344d6def5a2b996e771f86fd5fd64a26568e170b1dc542ae076e3cb38ec",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/accepted_node_inventory.py",
+      "bytes": 17207,
+      "sha256": "fbc8d934e3ffbb5b95d5e610f4ae0b25bcbf95508f835257e95599cbccdd456c",
+      "source_bytes": 17207,
+      "source_sha256": "fbc8d934e3ffbb5b95d5e610f4ae0b25bcbf95508f835257e95599cbccdd456c",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/assets/center.css",
+      "bytes": 10732,
+      "sha256": "992900191ef418f929f6777d3e710843c409bb8c33f33642df2deec15ececc11",
+      "source_bytes": 10732,
+      "source_sha256": "992900191ef418f929f6777d3e710843c409bb8c33f33642df2deec15ececc11",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/assets/center.js",
+      "bytes": 27258,
+      "sha256": "7461f387fcd51b9e8fa9e85e8b934ca8a9a75e9360d13629bf2962af815ccb0b",
+      "source_bytes": 27258,
+      "source_sha256": "7461f387fcd51b9e8fa9e85e8b934ca8a9a75e9360d13629bf2962af815ccb0b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/assets/user-access-ui.js",
+      "bytes": 14459,
+      "sha256": "cfba33c54c8db2193bad129e2442009ca2a5a3d7a0efa61474ad6c2ef05f78d0",
+      "source_bytes": 14459,
+      "source_sha256": "cfba33c54c8db2193bad129e2442009ca2a5a3d7a0efa61474ad6c2ef05f78d0",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/assets/violation-mail-ui.js",
+      "bytes": 14004,
+      "sha256": "4488190a38f9d1de997eb02cb7c1ef7f895f2c4a38199fbbe2fe1b37087d16b6",
+      "source_bytes": 14004,
+      "source_sha256": "4488190a38f9d1de997eb02cb7c1ef7f895f2c4a38199fbbe2fe1b37087d16b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/center_plugin.py",
+      "bytes": 19952,
+      "sha256": "8bb66d96d6ef5de4039adf8ae6636ff8af6ab0322e26f3260cac3582b9a7fdd7",
+      "source_bytes": 19952,
+      "source_sha256": "8bb66d96d6ef5de4039adf8ae6636ff8af6ab0322e26f3260cac3582b9a7fdd7",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/collect_nodes.py",
+      "bytes": 4286,
+      "sha256": "9aeb60a8f2508ea971e72ddb37ee051d843b7dd36fd6584cf34bfed24636454d",
+      "source_bytes": 4286,
+      "source_sha256": "9aeb60a8f2508ea971e72ddb37ee051d843b7dd36fd6584cf34bfed24636454d",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/lazycat_accounts.py",
+      "bytes": 19363,
+      "sha256": "3546c97dbbc850651e1eb159aa890b273be4340df37efc6823b7772432831a30",
+      "source_bytes": 19363,
+      "source_sha256": "3546c97dbbc850651e1eb159aa890b273be4340df37efc6823b7772432831a30",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/lazycat_accounts_worker.py",
+      "bytes": 9647,
+      "sha256": "c03a426142d9902da45bfa59cefc1340ed0df0f088906902dd3e90c55e23adb0",
+      "source_bytes": 9647,
+      "source_sha256": "c03a426142d9902da45bfa59cefc1340ed0df0f088906902dd3e90c55e23adb0",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-security-center/node_inventory.py",
+      "bytes": 11273,
+      "sha256": "7450f77517f737ade07185d275780ea87092c3b7c48b1bd311684de50387738b",
+      "source_bytes": 11273,
+      "source_sha256": "7450f77517f737ade07185d275780ea87092c3b7c48b1bd311684de50387738b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-staging/merge_sub.py",
+      "bytes": 44186,
+      "sha256": "b48a49b64e585f9f2586b784388f10e8341ae76ac9dc02a78b24964d726c378a",
+      "source_bytes": 44186,
+      "source_sha256": "b48a49b64e585f9f2586b784388f10e8341ae76ac9dc02a78b24964d726c378a",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/client_policy.py",
+      "bytes": 18521,
+      "sha256": "ec5e482b2c11ff1e1e4426e748797aa904c6cd6d31d4166e21213d97d9a9fce0",
+      "source_bytes": 18521,
+      "source_sha256": "ec5e482b2c11ff1e1e4426e748797aa904c6cd6d31d4166e21213d97d9a9fce0",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/dmit_topology_render.py",
+      "bytes": 12159,
+      "sha256": "4a311c82310aca15fa4156bc9c5cd7371bf04864c7dc90f248f75165f580a2c3",
+      "source_bytes": 12159,
+      "source_sha256": "4a311c82310aca15fa4156bc9c5cd7371bf04864c7dc90f248f75165f580a2c3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/domain_destination_override.py",
+      "bytes": 4555,
+      "sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "source_bytes": 4555,
+      "source_sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/edge_profile.py",
+      "bytes": 15999,
+      "sha256": "bab3c34417302bf347b9840e4dc2f4843cacb8174212fb39b4de6715a878e87a",
+      "source_bytes": 15999,
+      "source_sha256": "bab3c34417302bf347b9840e4dc2f4843cacb8174212fb39b4de6715a878e87a",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/edge_profile_v2.py",
+      "bytes": 12615,
+      "sha256": "3f155b8ab27adfa878974a8fec3f6e174eaffcd5f8fc13a35a1061942f53d44f",
+      "source_bytes": 12615,
+      "source_sha256": "3f155b8ab27adfa878974a8fec3f6e174eaffcd5f8fc13a35a1061942f53d44f",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/full_graph_cache.py",
+      "bytes": 18863,
+      "sha256": "1423fdb1e4d13334c91cf8a37f5799decd25b8815c600d89038933f3b298dc65",
+      "source_bytes": 18863,
+      "source_sha256": "1423fdb1e4d13334c91cf8a37f5799decd25b8815c600d89038933f3b298dc65",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/network_runtime.py",
+      "bytes": 16202,
+      "sha256": "8d763f21f730bf826978f9ff84e2cf6a9da38216346a676e6b02c680114cb513",
+      "source_bytes": 16202,
+      "source_sha256": "8d763f21f730bf826978f9ff84e2cf6a9da38216346a676e6b02c680114cb513",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/network_runtime_legacy.py",
+      "bytes": 28080,
+      "sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "source_bytes": 28080,
+      "source_sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/new_enrollment.py",
+      "bytes": 36666,
+      "sha256": "ad867811ba68d2a88b6fe3faea6879c76b204f8cd05adf74dcaa4a4d2925f58c",
+      "source_bytes": 36666,
+      "source_sha256": "ad867811ba68d2a88b6fe3faea6879c76b204f8cd05adf74dcaa4a4d2925f58c",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/new_topology.py",
+      "bytes": 45532,
+      "sha256": "195486562cdcd70de2869dc1ddd4dcc88d570c56c7f8357cf32d6c3975f4a1b5",
+      "source_bytes": 45532,
+      "source_sha256": "195486562cdcd70de2869dc1ddd4dcc88d570c56c7f8357cf32d6c3975f4a1b5",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/paoluz_cache.py",
+      "bytes": 13445,
+      "sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "source_bytes": 13445,
+      "source_sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/paoluz_cache_legacy.py",
+      "bytes": 13445,
+      "sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "source_bytes": 13445,
+      "source_sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/provider_pool.py",
+      "bytes": 14415,
+      "sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "source_bytes": 14415,
+      "source_sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/router_profile.py",
+      "bytes": 5239,
+      "sha256": "071da1e3632700ce71fc1ba79648dc157ce82b820fc77ea881666bef24da5ff8",
+      "source_bytes": 5239,
+      "source_sha256": "071da1e3632700ce71fc1ba79648dc157ce82b820fc77ea881666bef24da5ff8",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/routing_client_v4.py",
+      "bytes": 35379,
+      "sha256": "eb15f7f906ca5919cbea74f71a4b25d907e37d769425123569ed4d32eadb0ece",
+      "source_bytes": 35379,
+      "source_sha256": "eb15f7f906ca5919cbea74f71a4b25d907e37d769425123569ed4d32eadb0ece",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/server_route_policy.py",
+      "bytes": 14241,
+      "sha256": "d6f0c64f4e61864ff1db7b92552ccf76696a421a4c7efa0aab5ad5dda74a34d3",
+      "source_bytes": 14241,
+      "source_sha256": "d6f0c64f4e61864ff1db7b92552ccf76696a421a4c7efa0aab5ad5dda74a34d3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/server_route_policy_legacy.py",
+      "bytes": 28078,
+      "sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "source_bytes": 28078,
+      "source_sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/topology_enrollment_runtime.py",
+      "bytes": 36225,
+      "sha256": "cdbfcaa4818e5dd3321c3bd845d9b615bfeaa0a9016a8b8ce2af9c018a79cb9b",
+      "source_bytes": 36225,
+      "source_sha256": "cdbfcaa4818e5dd3321c3bd845d9b615bfeaa0a9016a8b8ce2af9c018a79cb9b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/topology_server.py",
+      "bytes": 25985,
+      "sha256": "f5db3390fac9fd47d815a7a447249c9635a4ed0d0f05876000a16cc79ef1a29d",
+      "source_bytes": 25985,
+      "source_sha256": "f5db3390fac9fd47d815a7a447249c9635a4ed0d0f05876000a16cc79ef1a29d",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/transport_bridges.py",
+      "bytes": 1693,
+      "sha256": "9e446344d6def5a2b996e771f86fd5fd64a26568e170b1dc542ae076e3cb38ec",
+      "source_bytes": 1693,
+      "source_sha256": "9e446344d6def5a2b996e771f86fd5fd64a26568e170b1dc542ae076e3cb38ec",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/verify_topology_live.py",
+      "bytes": 20730,
+      "sha256": "d94d052fb7503a7cfb6c7a1321f51065ad0b1670522b6a7b6bcaa0d4be771f83",
+      "source_bytes": 20730,
+      "source_sha256": "d94d052fb7503a7cfb6c7a1321f51065ad0b1670522b6a7b6bcaa0d4be771f83",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-topology/zoro_runtime.py",
+      "bytes": 12753,
+      "sha256": "3d285902b48e5cadb97c8f9d5e28a966a61a31e6b83f5cb7847d7ff784dd84a4",
+      "source_bytes": 12753,
+      "source_sha256": "3d285902b48e5cadb97c8f9d5e28a966a61a31e6b83f5cb7847d7ff784dd84a4",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/access_policy.py",
+      "bytes": 2086,
+      "sha256": "a436858c1feabafb6272c20144cafc024b2c116648503b2a678d15869d8d9661",
+      "source_bytes": 2086,
+      "source_sha256": "a436858c1feabafb6272c20144cafc024b2c116648503b2a678d15869d8d9661",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/admin_plugin.py",
+      "bytes": 23166,
+      "sha256": "bd1764107adf8addc87c5944e05f8571c795860940543fa089ce53ca076e11b4",
+      "source_bytes": 23166,
+      "source_sha256": "bd1764107adf8addc87c5944e05f8571c795860940543fa089ce53ca076e11b4",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/admin_registration.py",
+      "bytes": 471,
+      "sha256": "4e56d0c6f1810c72fae944c1825cc8e4dd11f121a0b9469adae314d11f953da9",
+      "source_bytes": 471,
+      "source_sha256": "4e56d0c6f1810c72fae944c1825cc8e4dd11f121a0b9469adae314d11f953da9",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/backup_audit.py",
+      "bytes": 1310,
+      "sha256": "ca3a4239b88f979a3cb3ee870ee97bce1cb2d951eb4e46b259a71d97182dcd75",
+      "source_bytes": 1310,
+      "source_sha256": "ca3a4239b88f979a3cb3ee870ee97bce1cb2d951eb4e46b259a71d97182dcd75",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/client_policy.py",
+      "bytes": 18521,
+      "sha256": "ec5e482b2c11ff1e1e4426e748797aa904c6cd6d31d4166e21213d97d9a9fce0",
+      "source_bytes": 18521,
+      "source_sha256": "ec5e482b2c11ff1e1e4426e748797aa904c6cd6d31d4166e21213d97d9a9fce0",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/control_backend.py",
+      "bytes": 2657,
+      "sha256": "9e8373a32aed4e46d645e09e24ff74e6543c86fd735dce7cd481d67fd724d1a9",
+      "source_bytes": 2657,
+      "source_sha256": "9e8373a32aed4e46d645e09e24ff74e6543c86fd735dce7cd481d67fd724d1a9",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/delivery_gateway.py",
+      "bytes": 12061,
+      "sha256": "8da510c00b4fe4d7a8f549546d0fa83a52d05877f13536d6797d931f71fb9a49",
+      "source_bytes": 12061,
+      "source_sha256": "8da510c00b4fe4d7a8f549546d0fa83a52d05877f13536d6797d931f71fb9a49",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/domain_destination_override.py",
+      "bytes": 4555,
+      "sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "source_bytes": 4555,
+      "source_sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/edge_profile.py",
+      "bytes": 15999,
+      "sha256": "bab3c34417302bf347b9840e4dc2f4843cacb8174212fb39b4de6715a878e87a",
+      "source_bytes": 15999,
+      "source_sha256": "bab3c34417302bf347b9840e4dc2f4843cacb8174212fb39b4de6715a878e87a",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/edge_profile_v2.py",
+      "bytes": 12615,
+      "sha256": "3f155b8ab27adfa878974a8fec3f6e174eaffcd5f8fc13a35a1061942f53d44f",
+      "source_bytes": 12615,
+      "source_sha256": "3f155b8ab27adfa878974a8fec3f6e174eaffcd5f8fc13a35a1061942f53d44f",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/full_graph_cache.py",
+      "bytes": 18863,
+      "sha256": "1423fdb1e4d13334c91cf8a37f5799decd25b8815c600d89038933f3b298dc65",
+      "source_bytes": 18863,
+      "source_sha256": "1423fdb1e4d13334c91cf8a37f5799decd25b8815c600d89038933f3b298dc65",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/identity.py",
+      "bytes": 8342,
+      "sha256": "f74c1c9a87ca09890d6c50c0f4d0e9bc2a7178877c63cf007affcfa1440efd50",
+      "source_bytes": 8342,
+      "source_sha256": "f74c1c9a87ca09890d6c50c0f4d0e9bc2a7178877c63cf007affcfa1440efd50",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/lifecycle.py",
+      "bytes": 33499,
+      "sha256": "9ccb0f6622abb8e5c0274ed46044f777de633b5aac0f86cc588b3ea569557af4",
+      "source_bytes": 33499,
+      "source_sha256": "9ccb0f6622abb8e5c0274ed46044f777de633b5aac0f86cc588b3ea569557af4",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/native_sessions.py",
+      "bytes": 6314,
+      "sha256": "e7b8f37eff4ea3ffe4091ed800404a49de887a5de50b18796e6a5d65df816572",
+      "source_bytes": 6314,
+      "source_sha256": "e7b8f37eff4ea3ffe4091ed800404a49de887a5de50b18796e6a5d65df816572",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/network_runtime.py",
+      "bytes": 16202,
+      "sha256": "8d763f21f730bf826978f9ff84e2cf6a9da38216346a676e6b02c680114cb513",
+      "source_bytes": 16202,
+      "source_sha256": "8d763f21f730bf826978f9ff84e2cf6a9da38216346a676e6b02c680114cb513",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/network_runtime_legacy.py",
+      "bytes": 28080,
+      "sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "source_bytes": 28080,
+      "source_sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/paoluz_cache_legacy.py",
+      "bytes": 13445,
+      "sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "source_bytes": 13445,
+      "source_sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/production_adapter.py",
+      "bytes": 21522,
+      "sha256": "41b388317a373240b6ffcf68d2ac474208902c435329255ed4f0a649a8b743ce",
+      "source_bytes": 21526,
+      "source_sha256": "f813bfb021db7f42059c855ee1232258061cc15c8aedb31b8dd35bfab82aaff6",
+      "mode": "0o644",
+      "redacted_fields": [
+        "native_secret_default_path"
+      ],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/provider_pool.py",
+      "bytes": 14415,
+      "sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "source_bytes": 14415,
+      "source_sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/purge_codecs.py",
+      "bytes": 5046,
+      "sha256": "9bc9567b8b28dcb01d5601083f7f3fc0560c0a6881bee953dabe2c5510a93102",
+      "source_bytes": 5097,
+      "source_sha256": "c3bfc0766987b83f38b93b541e2771e59f91a3f0fe45cd5085730a5e51511169",
+      "mode": "0o600",
+      "redacted_fields": [
+        "blocked_node_placeholder_password",
+        "blocked_node_uri_userinfo"
+      ],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/routing_client_v4.py",
+      "bytes": 35379,
+      "sha256": "eb15f7f906ca5919cbea74f71a4b25d907e37d769425123569ed4d32eadb0ece",
+      "source_bytes": 35379,
+      "source_sha256": "eb15f7f906ca5919cbea74f71a4b25d907e37d769425123569ed4d32eadb0ece",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/runtime_restore.py",
+      "bytes": 14661,
+      "sha256": "106f585d52e4375b8638e70a4424c401e688fe221bcad538411a525dc5b24761",
+      "source_bytes": 14661,
+      "source_sha256": "106f585d52e4375b8638e70a4424c401e688fe221bcad538411a525dc5b24761",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/runtime_revoke.py",
+      "bytes": 23601,
+      "sha256": "9e53a0fefb7349685b685af0656a8858b5e015c2ea8deb8a68660758f37d2593",
+      "source_bytes": 23601,
+      "source_sha256": "9e53a0fefb7349685b685af0656a8858b5e015c2ea8deb8a68660758f37d2593",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/server_route_policy.py",
+      "bytes": 14241,
+      "sha256": "d6f0c64f4e61864ff1db7b92552ccf76696a421a4c7efa0aab5ad5dda74a34d3",
+      "source_bytes": 14241,
+      "source_sha256": "d6f0c64f4e61864ff1db7b92552ccf76696a421a4c7efa0aab5ad5dda74a34d3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/server_route_policy_legacy.py",
+      "bytes": 28078,
+      "sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "source_bytes": 28078,
+      "source_sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/transport_bridges.py",
+      "bytes": 1693,
+      "sha256": "9e446344d6def5a2b996e771f86fd5fd64a26568e170b1dc542ae076e3cb38ec",
+      "source_bytes": 1693,
+      "source_sha256": "9e446344d6def5a2b996e771f86fd5fd64a26568e170b1dc542ae076e3cb38ec",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/ui/user-access-ui.css",
+      "bytes": 2186,
+      "sha256": "428eb2b5fbe75c4ab0a5486de97d18f57472f92534c1abc8064f1f89b3b3daac",
+      "source_bytes": 2186,
+      "source_sha256": "428eb2b5fbe75c4ab0a5486de97d18f57472f92534c1abc8064f1f89b3b3daac",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/ui/user-access-ui.js",
+      "bytes": 13687,
+      "sha256": "8cf1bce0b084ea719fd5cc6770f7cd1e41a6bf295ce05a5c8852cb1d2b8d7a99",
+      "source_bytes": 13687,
+      "source_sha256": "8cf1bce0b084ea719fd5cc6770f7cd1e41a6bf295ce05a5c8852cb1d2b8d7a99",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/verify_revoked_access.py",
+      "bytes": 12539,
+      "sha256": "52b67b51539424ad9e0bb49868acfdee28f18195beac48426930d2319f408228",
+      "source_bytes": 12539,
+      "source_sha256": "52b67b51539424ad9e0bb49868acfdee28f18195beac48426930d2319f408228",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge-user-access/worker.py",
+      "bytes": 4231,
+      "sha256": "a4dbcfc95ec64c642cca79e0b47837ef7eccaa2194b2a106a55f4b9bb3b12213",
+      "source_bytes": 4231,
+      "source_sha256": "a4dbcfc95ec64c642cca79e0b47837ef7eccaa2194b2a106a55f4b9bb3b12213",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/access_collector.py",
+      "bytes": 5746,
+      "sha256": "572e6227824c8d217346d10c752ba141dd9b73f6ef5897fdc83061193e3d8983",
+      "source_bytes": 5746,
+      "source_sha256": "572e6227824c8d217346d10c752ba141dd9b73f6ef5897fdc83061193e3d8983",
+      "mode": "0o700",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/audit_hk12_public.py",
+      "bytes": 5888,
+      "sha256": "c4c38191e8487f4a346492e449cdc569fe9c317bb9b7c3557331abc3d16924ea",
+      "source_bytes": 5888,
+      "source_sha256": "c4c38191e8487f4a346492e449cdc569fe9c317bb9b7c3557331abc3d16924ea",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/cleanup_7d.py",
+      "bytes": 5308,
+      "sha256": "641fcda63c10bc81abf7b26360a8ba03a756cfc554e42b7f1c2008efe64b612b",
+      "source_bytes": 5308,
+      "source_sha256": "641fcda63c10bc81abf7b26360a8ba03a756cfc554e42b7f1c2008efe64b612b",
+      "mode": "0o755",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/client_country.py",
+      "bytes": 3379,
+      "sha256": "a98d9f8c6b12fd271711740d66dcce46f83e3e0bd5b8baae9b0356bab65f6bca",
+      "source_bytes": 3379,
+      "source_sha256": "a98d9f8c6b12fd271711740d66dcce46f83e3e0bd5b8baae9b0356bab65f6bca",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/client_policy.py",
+      "bytes": 18521,
+      "sha256": "ec5e482b2c11ff1e1e4426e748797aa904c6cd6d31d4166e21213d97d9a9fce0",
+      "source_bytes": 18521,
+      "source_sha256": "ec5e482b2c11ff1e1e4426e748797aa904c6cd6d31d4166e21213d97d9a9fce0",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/delivery_qr.py",
+      "bytes": 2036,
+      "sha256": "4ce1890cc7b9d1eeb535ca0d49f72d36139be915ffc77e2ce0ac52f00fb5e2c1",
+      "source_bytes": 2036,
+      "source_sha256": "4ce1890cc7b9d1eeb535ca0d49f72d36139be915ffc77e2ce0ac52f00fb5e2c1",
+      "mode": "0o700",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/domain_destination_override.py",
+      "bytes": 4555,
+      "sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "source_bytes": 4555,
+      "source_sha256": "aa7f5247c86d1ae3649b16f4da195317b05d5b503584c427f2ac87768787efe1",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/edge_profile.py",
+      "bytes": 15999,
+      "sha256": "bab3c34417302bf347b9840e4dc2f4843cacb8174212fb39b4de6715a878e87a",
+      "source_bytes": 15999,
+      "source_sha256": "bab3c34417302bf347b9840e4dc2f4843cacb8174212fb39b4de6715a878e87a",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/edge_profile_v2.py",
+      "bytes": 12615,
+      "sha256": "3f155b8ab27adfa878974a8fec3f6e174eaffcd5f8fc13a35a1061942f53d44f",
+      "source_bytes": 12615,
+      "source_sha256": "3f155b8ab27adfa878974a8fec3f6e174eaffcd5f8fc13a35a1061942f53d44f",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/expiry_policy.py",
+      "bytes": 9344,
+      "sha256": "59f9e58251abb52db12f6afc274d607881d583256629d22a97b4191afe345b9d",
+      "source_bytes": 9344,
+      "source_sha256": "59f9e58251abb52db12f6afc274d607881d583256629d22a97b4191afe345b9d",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/five_group_stage.py",
+      "bytes": 27043,
+      "sha256": "2e543596cdd7e448a703bc071c140186cd120d822dfac50dd9727d6ecec15c05",
+      "source_bytes": 27043,
+      "source_sha256": "2e543596cdd7e448a703bc071c140186cd120d822dfac50dd9727d6ecec15c05",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/full_graph_cache.py",
+      "bytes": 18863,
+      "sha256": "1423fdb1e4d13334c91cf8a37f5799decd25b8815c600d89038933f3b298dc65",
+      "source_bytes": 18863,
+      "source_sha256": "1423fdb1e4d13334c91cf8a37f5799decd25b8815c600d89038933f3b298dc65",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/merge_sub.py",
+      "bytes": 44813,
+      "sha256": "fc6d0df91804285a0b2a113861f41f9edf24b498c16f678edb8bfb9efffbe7d9",
+      "source_bytes": 44813,
+      "source_sha256": "fc6d0df91804285a0b2a113861f41f9edf24b498c16f678edb8bfb9efffbe7d9",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/network_runtime.py",
+      "bytes": 28080,
+      "sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "source_bytes": 28080,
+      "source_sha256": "31af8432008b43ea55e1ca362ff3856cf8799a9fe973cdc0d7d1a40d493706af",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/new_topology.py",
+      "bytes": 45532,
+      "sha256": "195486562cdcd70de2869dc1ddd4dcc88d570c56c7f8357cf32d6c3975f4a1b5",
+      "source_bytes": 45532,
+      "source_sha256": "195486562cdcd70de2869dc1ddd4dcc88d570c56c7f8357cf32d6c3975f4a1b5",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/paoluz_cache_legacy.py",
+      "bytes": 13445,
+      "sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "source_bytes": 13445,
+      "source_sha256": "6d50e2305e40a15f1d2e1422c03d8bc25312d828cdc5cd6223f8da1f1f246cf4",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/pc_only_stage.py",
+      "bytes": 15425,
+      "sha256": "4f4f44031ec43e0a16ee647f006c2084c175fe31cd075581898160a157c2669c",
+      "source_bytes": 15425,
+      "source_sha256": "4f4f44031ec43e0a16ee647f006c2084c175fe31cd075581898160a157c2669c",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/provider_pool.py",
+      "bytes": 14415,
+      "sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "source_bytes": 14415,
+      "source_sha256": "b2c48af85cadeb100af385ad07297f16ccde6b2624d53fbefa3487a9544f3666",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/public_five_group.py",
+      "bytes": 11632,
+      "sha256": "c42e4401329776bffa2bc7bfcfb5dab3a5b841b28323428d03df44b8608cf7a0",
+      "source_bytes": 11632,
+      "source_sha256": "c42e4401329776bffa2bc7bfcfb5dab3a5b841b28323428d03df44b8608cf7a0",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/public_five_group_hook.py",
+      "bytes": 9803,
+      "sha256": "040b9787248fb2f4e39be555a700583773ab6e1d53755baace1d51e0d71ce2f4",
+      "source_bytes": 9803,
+      "source_sha256": "040b9787248fb2f4e39be555a700583773ab6e1d53755baace1d51e0d71ce2f4",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/public_nosla_nodes.py",
+      "bytes": 4184,
+      "sha256": "4beb673c7aad19ddd5b8f865c9e35611d295b97f9590a95a0a8205570b4068dc",
+      "source_bytes": 4184,
+      "source_sha256": "4beb673c7aad19ddd5b8f865c9e35611d295b97f9590a95a0a8205570b4068dc",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/routing_client_v4.py",
+      "bytes": 35379,
+      "sha256": "eb15f7f906ca5919cbea74f71a4b25d907e37d769425123569ed4d32eadb0ece",
+      "source_bytes": 35379,
+      "source_sha256": "eb15f7f906ca5919cbea74f71a4b25d907e37d769425123569ed4d32eadb0ece",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/routing_rule_catalog.py",
+      "bytes": 5427,
+      "sha256": "b8f87078dcc2325879b5c84fdab0359fe0ce4bd981ab95a95529b27a6d0d57f4",
+      "source_bytes": 5427,
+      "source_sha256": "b8f87078dcc2325879b5c84fdab0359fe0ce4bd981ab95a95529b27a6d0d57f4",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/rule_admin.py",
+      "bytes": 30924,
+      "sha256": "1151b7826eb64eed1d151cf863423adbc831f5daf84b01be1d0507aa82dd6014",
+      "source_bytes": 30924,
+      "source_sha256": "1151b7826eb64eed1d151cf863423adbc831f5daf84b01be1d0507aa82dd6014",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/security_admin.py",
+      "bytes": 114505,
+      "sha256": "217065e922a29211d48eef7f8cdba3574c2caf5bc86164c151088742113e34db",
+      "source_bytes": 114505,
+      "source_sha256": "217065e922a29211d48eef7f8cdba3574c2caf5bc86164c151088742113e34db",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/server_route_policy.py",
+      "bytes": 28078,
+      "sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "source_bytes": 28078,
+      "source_sha256": "3c88beba73fc522a3b9579f2d5eb3d3b644e8ea47d59d248b044002319854d3f",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/sync_hk_users.py",
+      "bytes": 4327,
+      "sha256": "7013ea0819bb4d081a287b75a3dd168118605f362e458ab5a9b6a931400706ff",
+      "source_bytes": 4327,
+      "source_sha256": "7013ea0819bb4d081a287b75a3dd168118605f362e458ab5a9b6a931400706ff",
+      "mode": "0o755",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/submerge/trial_expiry.py",
+      "bytes": 8889,
+      "sha256": "eaf7ad455fbd571abcd9d95b5619279a3177b84bbe4c17d919cbfbe936cd19e7",
+      "source_bytes": 8889,
+      "source_sha256": "eaf7ad455fbd571abcd9d95b5619279a3177b84bbe4c17d919cbfbe936cd19e7",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/canonical_expiry_policy.py",
+      "bytes": 1978,
+      "sha256": "728a9225a7162dba7b7d58c217e602dc8b80f81cde10ea18cb781135f2676476",
+      "source_bytes": 1978,
+      "source_sha256": "728a9225a7162dba7b7d58c217e602dc8b80f81cde10ea18cb781135f2676476",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/daily_accounting.py",
+      "bytes": 36333,
+      "sha256": "b642e8e3d163dcf6c80da432b75c0083d6e74d1c078bae3a03ae5c01aa5923c7",
+      "source_bytes": 36333,
+      "source_sha256": "b642e8e3d163dcf6c80da432b75c0083d6e74d1c078bae3a03ae5c01aa5923c7",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/daily_api.py",
+      "bytes": 3493,
+      "sha256": "894d40179d83fb8bccda83233d2226a7e0d1038e94cfc89ff57bfaa53d9da926",
+      "source_bytes": 3493,
+      "source_sha256": "894d40179d83fb8bccda83233d2226a7e0d1038e94cfc89ff57bfaa53d9da926",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/daily_collector_hook.py",
+      "bytes": 3946,
+      "sha256": "d9c1dda1a3ad45b72e4aaa3ab089ebd96280cde08f1690b2c32dc26c3f9f0701",
+      "source_bytes": 3946,
+      "source_sha256": "d9c1dda1a3ad45b72e4aaa3ab089ebd96280cde08f1690b2c32dc26c3f9f0701",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/daily_expiry.py",
+      "bytes": 3691,
+      "sha256": "64eae980085690226bde04b8addfbe2d62a02a35c996cd23d0cd762a940c4255",
+      "source_bytes": 3691,
+      "source_sha256": "64eae980085690226bde04b8addfbe2d62a02a35c996cd23d0cd762a940c4255",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/daily_mirror.py",
+      "bytes": 2481,
+      "sha256": "c38fc55df9cd5218cb2dcff70adbb725cef37fce346c1290713105b884d06dd8",
+      "source_bytes": 2481,
+      "source_sha256": "c38fc55df9cd5218cb2dcff70adbb725cef37fce346c1290713105b884d06dd8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/daily_snapshot_export.py",
+      "bytes": 797,
+      "sha256": "823c6874473f4a705f3c559774c19bb4247a5a5f4396b7c1fe624c04a70d2950",
+      "source_bytes": 797,
+      "source_sha256": "823c6874473f4a705f3c559774c19bb4247a5a5f4396b7c1fe624c04a70d2950",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/daily_subscriber.py",
+      "bytes": 10164,
+      "sha256": "149eb3bf67deab394a4d32d0ecdedc1d136f75b84fc1fa9554493d7dca57fe86",
+      "source_bytes": 10164,
+      "source_sha256": "149eb3bf67deab394a4d32d0ecdedc1d136f75b84fc1fa9554493d7dca57fe86",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/network_stats.py",
+      "bytes": 36387,
+      "sha256": "9f31d8d1737a22a6abe72357f67f47362250300ebff4677d199b5ba63c8a339f",
+      "source_bytes": 36387,
+      "source_sha256": "9f31d8d1737a22a6abe72357f67f47362250300ebff4677d199b5ba63c8a339f",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/network_stats_legacy.py",
+      "bytes": 47805,
+      "sha256": "b7bfb3c9af2beff9f6f9d3ffef2a97c3b34847fbaf6305b3e1d80fca7893bcde",
+      "source_bytes": 47805,
+      "source_sha256": "b7bfb3c9af2beff9f6f9d3ffef2a97c3b34847fbaf6305b3e1d80fca7893bcde",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/revision_inventory.py",
+      "bytes": 9342,
+      "sha256": "939d4aa5d61d64dc35310eb9e40ebb237b0290899421ad0db5673530cf08663b",
+      "source_bytes": 9342,
+      "source_sha256": "939d4aa5d61d64dc35310eb9e40ebb237b0290899421ad0db5673530cf08663b",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/role_policy.py",
+      "bytes": 9332,
+      "sha256": "cbaeb102b13dcfb9ecfb3505377451146b5ad2a783f7385e7a1c59ea13df95a6",
+      "source_bytes": 9332,
+      "source_sha256": "cbaeb102b13dcfb9ecfb3505377451146b5ad2a783f7385e7a1c59ea13df95a6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/routing_contract.py",
+      "bytes": 5364,
+      "sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "source_bytes": 5364,
+      "source_sha256": "e6bc3f8c85ca7c03afb429691316987dc99648127c6248cac805a0b780abf4b6",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "opt/user-daily-traffic/topology_archive.py",
+      "bytes": 29817,
+      "sha256": "8a29cfec047d9d510d6e367a3745021356f2af23059c5cfdaee19f45e3bf1f32",
+      "source_bytes": 29817,
+      "source_sha256": "8a29cfec047d9d510d6e367a3745021356f2af23059c5cfdaee19f45e3bf1f32",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/ai_health_v4.py",
+      "bytes": 4852,
+      "sha256": "d78ca4fd00bafa7a508a635c2fccb40e02cc3521f30eca25ac13b4fea6ba3858",
+      "source_bytes": 4852,
+      "source_sha256": "d78ca4fd00bafa7a508a635c2fccb40e02cc3521f30eca25ac13b4fea6ba3858",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_ai_policy.py",
+      "bytes": 17451,
+      "sha256": "6f97b6efd8d6247023c48b56f80300384635569866b1cf83a08097c20cdbe8e3",
+      "source_bytes": 17451,
+      "source_sha256": "6f97b6efd8d6247023c48b56f80300384635569866b1cf83a08097c20cdbe8e3",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_ai_policy_v2.py",
+      "bytes": 11048,
+      "sha256": "8b4fe25931bfaf73c206c1fd4bcf43f9e9dc7c312c74968c97d56ff7db3d1970",
+      "source_bytes": 11048,
+      "source_sha256": "8b4fe25931bfaf73c206c1fd4bcf43f9e9dc7c312c74968c97d56ff7db3d1970",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_ai_policy_v3.py",
+      "bytes": 9637,
+      "sha256": "feae40a7833f83a49afa0d32e4687c0edb9213e717875919faa3f21b16242df2",
+      "source_bytes": 9637,
+      "source_sha256": "feae40a7833f83a49afa0d32e4687c0edb9213e717875919faa3f21b16242df2",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_ai_policy_v4.py",
+      "bytes": 10879,
+      "sha256": "ecf65836e5d9293bc3a212d206080e85a398fa3758ec036c9d20662783b31900",
+      "source_bytes": 10879,
+      "source_sha256": "ecf65836e5d9293bc3a212d206080e85a398fa3758ec036c9d20662783b31900",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_apply.py",
+      "bytes": 53017,
+      "sha256": "434e378d1994229fe034f626d98f6191bbb5ce35e8aa7d00a9cb851e3346ba72",
+      "source_bytes": 53017,
+      "source_sha256": "434e378d1994229fe034f626d98f6191bbb5ce35e8aa7d00a9cb851e3346ba72",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_bundle.py",
+      "bytes": 18946,
+      "sha256": "38532eb3373ff533ad5e0d2581eae793727d4726b19e84539d7da19ee88fbdca",
+      "source_bytes": 18946,
+      "source_sha256": "38532eb3373ff533ad5e0d2581eae793727d4726b19e84539d7da19ee88fbdca",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_controller.py",
+      "bytes": 27278,
+      "sha256": "a38dc37bdd2fbd7a479ae4c0fd29bcbaf58e2f61dfab11c53585dfe375992161",
+      "source_bytes": 27278,
+      "source_sha256": "a38dc37bdd2fbd7a479ae4c0fd29bcbaf58e2f61dfab11c53585dfe375992161",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_events.py",
+      "bytes": 30024,
+      "sha256": "4c05b277e3a68cec1469649e534373f83bd9b3150626ed9143c4953eaefb2956",
+      "source_bytes": 30024,
+      "source_sha256": "4c05b277e3a68cec1469649e534373f83bd9b3150626ed9143c4953eaefb2956",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_logs.py",
+      "bytes": 18727,
+      "sha256": "ddf668e86bca5452b733f7db9a7c0279ab33a8864cb0f6b45d2791ef2596dae8",
+      "source_bytes": 18727,
+      "source_sha256": "ddf668e86bca5452b733f7db9a7c0279ab33a8864cb0f6b45d2791ef2596dae8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_pool_probe.py",
+      "bytes": 2170,
+      "sha256": "8c8806066f71647554378da448296904f820669c06c51803501926f6342108cd",
+      "source_bytes": 2170,
+      "source_sha256": "8c8806066f71647554378da448296904f820669c06c51803501926f6342108cd",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_probe.py",
+      "bytes": 20379,
+      "sha256": "2ad0853fc8fab09ee397266532bf48b7c3cd1c2815bd88bb052d34b40df877e9",
+      "source_bytes": 20379,
+      "source_sha256": "2ad0853fc8fab09ee397266532bf48b7c3cd1c2815bd88bb052d34b40df877e9",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_start_guard.py",
+      "bytes": 1808,
+      "sha256": "20f84ca05d4aa7f58d3615ee503ded47c597faabf7908fa896029a47e89c1cd9",
+      "source_bytes": 1808,
+      "source_sha256": "20f84ca05d4aa7f58d3615ee503ded47c597faabf7908fa896029a47e89c1cd9",
+      "mode": "0o600",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/edge_status.py",
+      "bytes": 7865,
+      "sha256": "4f60c20ef9eff1022b36fe36e4a77b3d73f8559140605bae7cb107505362dac8",
+      "source_bytes": 7865,
+      "source_sha256": "4f60c20ef9eff1022b36fe36e4a77b3d73f8559140605bae7cb107505362dac8",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/routing_contract.py",
+      "bytes": 5123,
+      "sha256": "d1a536661887ec9188c92c3ff4d8009d6359b24feef2392c29966f1e2b41a41d",
+      "source_bytes": 5123,
+      "source_sha256": "d1a536661887ec9188c92c3ff4d8009d6359b24feef2392c29966f1e2b41a41d",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/starhub_selection.py",
+      "bytes": 8138,
+      "sha256": "aba03639220a7b30209d17b1fb0624f4421c96a6362d2d0461a5b8ca889c96f9",
+      "source_bytes": 8138,
+      "source_sha256": "aba03639220a7b30209d17b1fb0624f4421c96a6362d2d0461a5b8ca889c96f9",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/starhub_selection_v3.py",
+      "bytes": 647,
+      "sha256": "ff46fa418198795dff53ca07d32f884838559063e7d89fc51e69f51ec4fb3e58",
+      "source_bytes": 647,
+      "source_sha256": "ff46fa418198795dff53ca07d32f884838559063e7d89fc51e69f51ec4fb3e58",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    },
+    {
+      "path": "usr/local/lib/lazycat-edge/starhub_selection_v4.py",
+      "bytes": 1543,
+      "sha256": "e5ae91ccfebbb8c074a429db1370bfe744b6f839df6e86b0df391f8dbdd1bec4",
+      "source_bytes": 1543,
+      "source_sha256": "e5ae91ccfebbb8c074a429db1370bfe744b6f839df6e86b0df391f8dbdd1bec4",
+      "mode": "0o644",
+      "redacted_fields": [],
+      "risk_flags": []
+    }
+  ],
+  "manifest_sha256": "bbeb670cb16a7b57fd4638f5a54c344b7ecad811c9a6fad2f3bbd11cd4079d24"
+}

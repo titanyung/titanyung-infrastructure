@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}登录{% endblock %}
+{% block content %}
+<section class="auth-card card">
+  <p class="eyebrow">安全登录</p>
+  <h1>{{ '账本已锁定' if locked else '欢迎回来' }}</h1>
+  {% if locked %}<p class="muted">闲置 1 分钟后已锁定。解锁后会回到原页面，并恢复未提交的内容与筛选。</p>{% endif %}
+  {% if trusted_device %}
+  <p class="muted">此浏览器已验证，输入密码即可登录。清除网站数据或重置密码后需再次输入验证器代码。</p>
+  {% else %}
+  <p class="muted">此浏览器尚未验证，首次登录需密码和六位验证器代码；验证后会记住此浏览器。</p>
+  {% endif %}
+  <form method="post" class="stack">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>密码<input name="password" type="password" autocomplete="current-password" required autofocus></label>
+    {% if not trusted_device %}
+    <label>六位验证器代码<input name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" required></label>
+    {% endif %}
+    <button class="primary" type="submit">登录</button>
+  </form>
+  {% if passkey_available %}<button type="button" class="button passkey-unlock" data-passkey-unlock>使用手机指纹／设备解锁</button><p class="fine-print">实际验证方式由手机决定，也可能要求面容或设备密码。</p>{% endif %}
+</section>
+{% endblock %}

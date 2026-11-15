@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}统计{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">总览</p><h1>账单统计</h1><p class="muted">每月 13 日至次月 12 日为一个账单周期；支出为正，退款为负。</p></div><a class="primary button" href="{{ url_for('bill_new') }}">＋ 新增账单</a></div>
+<div class="card filter-card">
+  <form method="get" class="filter-grid">
+    <input type="hidden" name="trend" value="{{ trend_view }}">
+    <label>日期<input type="date" name="day" value="{{ day }}"></label>
+    <label>所在周<input type="date" name="week" value="{{ week }}"></label>
+    <label>账单周期起始月<input type="month" name="month" value="{{ month }}"></label>
+    <label>账单年度<input type="number" name="year" min="1900" max="9998" value="{{ year }}"></label>
+    <button type="submit">切换统计范围</button>
+  </form>
+</div>
+<div class="four-grid">
+{% for item in periods %}
+  <section class="card stat-card"><span class="muted">{{ item.label }}消费 · {{ item.start }} 至 {{ item.end }}</span><strong class="big-number">{{ item.total|money }}</strong>
+    <div class="breakdown">{% if item.breakdown %}{% for row in item.breakdown %}<div><span>{{ row.name }}</span><b>{{ row.amount|money }}</b></div>{% endfor %}{% else %}<span class="muted">尚无消费项目</span>{% endif %}</div>
+  </section>
+{% endfor %}
+</div>
+<h2>预算统计</h2>
+<div class="three-grid">
+  <section class="card"><h3>本期 · {{ current.month }}</h3><p class="muted">{{ current.period }}</p><div class="kv"><span>预算</span><b>{{ current.budget|money }}</b></div><div class="kv"><span>支出</span><b>{{ current.spent|money }}</b></div><div class="kv strong"><span>剩余</span><b class="{{ 'danger' if current.remaining < 0 else 'good' }}">{{ current.remaining|money }}</b></div></section>
+  <section class="card"><h3>上期 · {{ prior.month if prior else '未采集' }}</h3>{% if prior %}<p class="muted">{{ prior.period }}</p><div class="kv"><span>预算</span><b>{{ prior.budget|money }}</b></div><div class="kv"><span>支出</span><b>{{ prior.spent|money }}</b></div><div class="kv strong"><span>剩余</span><b class="{{ 'danger' if prior.remaining < 0 else 'good' }}">{{ prior.remaining|money }}</b></div>{% else %}<p class="muted">账本上线前的周期没有数据。</p>{% endif %}</section>
+  <section class="card"><h3>对比与累计</h3><div class="kv"><span>支出较上期</span><b>{% if delta is not none %}{{ '↑' if delta > 0 else '↓' if delta < 0 else '－' }} {{ (delta if delta >= 0 else -delta)|money }}{% else %}未采集{% endif %}</b></div><div class="kv"><span>本账单年剩余合计</span><b>{{ year_remaining|money }}</b></div><div class="kv"><span>上线以来剩余合计</span><b>{{ all_remaining|money }}</b></div></section>
+</div>
+<section class="card">
+  <h3>各项目预算 · {{ project_month }}</h3>
+  <p class="muted">{{ project_period }}；可用上方“账单周期起始月”切换明细。父项目支出包含子项目，项目下方另列本项目直接支出。</p>
+  {% if project_month < started %}
+    <div class="empty">该账单周期早于账本上线，未采集。</div>
+  {% elif project_entries %}
+    <div class="table-wrap"><table class="project-table"><thead><tr><th>项目</th><th>预算</th><th>支出（含子项目）</th><th>剩余</th><th>支出较上期</th></tr></thead><tbody>
+      {% for item in project_entries %}
+      <tr data-project-id="{{ item.category.id }}">
+        <td class="project-cell" style="--depth: {{ item.category.depth }}"><strong>{{ item.category.name }}</strong><small>本项目直接支出 {{ item.direct_spent|money }}</small></td>
+        <td class="nowrap">{{ item.budget|money }}</td>
+        <td class="nowrap">{{ item.spent|money }}</td>
+        <td class="nowrap {{ 'danger' if item.remaining < 0 else 'good' }}">{{ item.remaining|money }}</td>
+        <td class="nowrap">{% if item.previous_spent is not none %}{% set change = item.spent - item.previous_spent %}{{ '↑' if change > 0 else '↓' if change < 0 else '－' }} {{ (change if change >= 0 else -change)|money }}{% else %}未采集{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody></table></div>
+  {% else %}
+    <div class="empty">尚无消费项目。</div>
+  {% endif %}
+  <p class="fine-print">每个项目的剩余 = 该项目预算 − 该项目及子项目的支出；子项目预算独立比较，不重复计入总预算。</p>
+</section>
+<section class="card trend-card" id="budget-trend">
+  <div class="trend-heading">
+    <div><h3>账单周期环比</h3><p class="muted">超支 {{ trend_counts.negative }} 期 · 有剩余 {{ trend_counts.positive }} 期 · 刚好用完 {{ trend_counts.zero }} 期</p></div>
+    <div class="trend-switch" aria-label="月度环比范围">
+      <a href="{{ url_for('dashboard', day=day, week=week, month=month, year=year, trend='twelve', _anchor='budget-trend') }}" class="{{ 'active' if trend_view == 'twelve' else '' }}" {% if trend_view == 'twelve' %}aria-current="page"{% endif %}>近 12 期</a>
+      <a href="{{ url_for('dashboard', day=day, week=week, month=month, year=year, trend='yearly', _anchor='budget-trend') }}" class="{{ 'active' if trend_view == 'yearly' else '' }}" {% if trend_view == 'yearly' %}aria-current="page"{% endif %}>本年</a>
+    </div>
+  </div>
+  {% if trend_items %}
+  <div class="trend-columns" aria-hidden="true"><span>账单周期</span><span>预算</span><span>支出</span><span>剩余</span><span>较上期支出</span></div>
+  <div class="trend-months">
+    {% for item in trend_items %}
+    <details class="trend-month" data-month="{{ item.month }}" {% if loop.last %}open{% endif %}>
+      <summary class="trend-values">
+        <span class="trend-month-label"><span class="trend-chevron" aria-hidden="true">›</span><strong>{{ item.month }}</strong><small>{{ item.period }} · 查看各项目</small></span>
+        <span class="trend-value"><span class="field-label">预算</span>{{ item.budget|money }}</span>
+        <span class="trend-value"><span class="field-label">支出</span>{{ item.spent|money }}</span>
+        <span class="trend-value {{ 'danger' if item.remaining < 0 else 'good' }}"><span class="field-label">剩余</span>{{ item.remaining|money }}</span>
+        <span class="trend-value"><span class="field-label">较上期支出</span>{% if item.previous_spent is not none %}{% set change = item.spent - item.previous_spent %}{{ '↑' if change > 0 else '↓' if change < 0 else '－' }} {{ (change if change >= 0 else -change)|money }}{% else %}未采集{% endif %}</span>
+      </summary>
+      <div class="trend-projects">
+        {% if trend_projects[item.month] %}
+        <div class="trend-project-heading trend-values" aria-hidden="true"><span>项目</span><span>预算</span><span>支出（含子项目）</span><span>剩余</span><span>支出较上期</span></div>
+        {% for entry in trend_projects[item.month] %}
+        <div class="trend-project trend-values" data-project-id="{{ entry.category.id }}">
+          <span class="trend-project-name" style="--depth: {{ entry.category.depth }}"><strong>{{ entry.category.name }}</strong><small>本项目直接支出 {{ entry.direct_spent|money }}</small></span>
+          <span class="trend-value"><span class="field-label">预算</span>{{ entry.budget|money }}</span>
+          <span class="trend-value"><span class="field-label">支出（含子项目）</span>{{ entry.spent|money }}</span>
+          <span class="trend-value {{ 'danger' if entry.remaining < 0 else 'good' }}"><span class="field-label">剩余</span>{{ entry.remaining|money }}</span>
+          <span class="trend-value"><span class="field-label">支出较上期</span>{% if entry.previous_spent is not none %}{% set change = entry.spent - entry.previous_spent %}{{ '↑' if change > 0 else '↓' if change < 0 else '－' }} {{ (change if change >= 0 else -change)|money }}{% else %}未采集{% endif %}</span>
+        </div>
+        {% endfor %}
+        {% else %}<div class="empty">该月没有消费项目。</div>{% endif %}
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+  {% else %}<div class="empty">账本上线后暂无可统计的账单周期。</div>{% endif %}
+</section>
+<p class="fine-print">数据从 {{ started_at }} 上线日起统计，首个账单周期可能不完整；此前周期不计为“零消费”。每月 13 日为账单日，上期为上月 13 日至本月 12 日，本期为本月 13 日至次月 12 日。预算从设定周期起生效；一级项目预算相加为每期总预算，子项目预算仅用于独立比较。</p>
+{% endblock %}

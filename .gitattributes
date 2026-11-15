@@ -1,0 +1,6 @@
+# Preserve server snapshot byte hashes on every checkout.
+* text=auto eol=lf
+# Production snapshots must preserve source bytes exactly, including CRLF.
+source/** -text
+peers/**/source/** -text
+*.png binary

@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "origin": "bytevirt-hk",
+  "roots": [
+    "/opt/hk-traffic-dashboard"
+  ],
+  "file_count": 3,
+  "total_bytes": 32583,
+  "files": [
+    {
+      "path": "opt/hk-traffic-dashboard/app.py",
+      "bytes": 20693,
+      "sha256": "68416c9b893d56edc800a699ce441e3b199cd7410683d49700a40a6f993d0b8d",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "opt/hk-traffic-dashboard/collector.py",
+      "bytes": 11383,
+      "sha256": "6c183f8e2f1add9b474eb7376c44e29ca25c77a05953556dbf032c02fe280f01",
+      "mode": "0o644",
+      "risk_flags": []
+    },
+    {
+      "path": "opt/hk-traffic-dashboard/setup-nft.sh",
+      "bytes": 507,
+      "sha256": "00c09377c3454bd4d04a0e145fd787c986593128992f696cd9f680407c893a33",
+      "mode": "0o755",
+      "risk_flags": []
+    }
+  ],
+  "manifest_sha256": "904adb6058e5ed48e365b86892569eab26be7d7e00a67ba02ceee0562d6510aa"
+}

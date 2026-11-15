@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}安全设置{% endblock %}
+{% block content %}
+<div class="page-heading"><div><p class="eyebrow">账户安全</p><h1>设置</h1><p class="muted">系统只有一个账本账户，登录和改密码都要求验证器动态代码。</p></div></div>
+<div class="two-grid">
+<section class="card"><h2>手机指纹解锁</h2><p class="muted">先在手机上登录本站，再在此手机注册设备凭证。之后可用指纹、面容或设备密码解锁；具体方式由手机决定。</p><label>当前密码<input type="password" id="passkey-current-password" autocomplete="current-password"></label><button type="button" class="primary" id="register-passkey">在本设备启用</button><p id="passkey-status" role="status" class="fine-print"></p></section>
+<section class="card"><h2>修改密码</h2><form method="post" action="{{ url_for('change_password') }}" class="stack"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>当前密码<input type="password" name="old_password" autocomplete="current-password" required></label><label>新密码（至少 10 位）<input type="password" name="new_password" minlength="10" autocomplete="new-password" required></label><label>再次输入新密码<input type="password" name="confirm" minlength="10" autocomplete="new-password" required></label><label>验证器动态代码<input name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></label><button class="primary" type="submit">修改密码并重新登录</button></form></section>
+<section class="card danger-card"><h2>解绑验证器并清空数据</h2><p>此操作只清空这个新账本的账单、项目、预算和标签，现有 Bill 系统不受影响。清空后不可在页面恢复，请先备份数据库。</p><form method="post" action="{{ url_for('unbind') }}" class="stack" data-confirm="最后确认：解绑验证器并永久清空新账本的全部数据？"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>验证器动态代码<input name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></label><label>二次确认：输入“清空全部账单数据并解绑”<input name="confirm" autocomplete="off" required></label><button class="danger-button" type="submit">解绑并清空全部数据</button></form></section>
+</div>
+{% endblock %}
