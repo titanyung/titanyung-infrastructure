@@ -1,17 +1,16 @@
-"""X routing checks against the current production-byte candidates."""
+"""Offline X routing checks against the checked-in source snapshot."""
 from __future__ import annotations
 
 from pathlib import Path
 import sys
 import types
 import unittest
+from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
-OPS = HERE.parent
-REVISION = OPS / 'routing-revision-20261109'
-EXPIRY = OPS / 'routing-adjust-20261112' / 'expiry-release' / 'candidate'
-sys.path[:0] = [str(HERE), str(EXPIRY), str(REVISION / 'server-candidate'),
-                str(REVISION / 'client-candidate')]
+SOURCE = HERE.parents[1] / 'source' / 'opt'
+sys.path[:0] = [str(HERE), str(SOURCE / 'submerge-routing'),
+                str(SOURCE / 'submerge-client-policy')]
 
 import client_fixture
 import client_policy
@@ -25,11 +24,19 @@ new_topology.PLAN_GOOGLE = '🤖 chatgpt、claude、google（不含youtube）'
 new_topology.PLAN_YOUTUBE_SUFFIXES = ('youtube.com', 'youtu.be')
 new_topology.UDP_FALLBACK_GUARD = 'NETWORK,UDP,REJECT'
 new_topology.PLAN_ROUTE_NAMES = {key: key for key in client_policy.SITES}
-sys.modules['new_topology'] = new_topology
+X_SUFFIXES = ('x.com', 'twitter.com', 'twimg.com', 't.co')
 
 
 class XAiRouteTests(unittest.TestCase):
+    def setUp(self):
+        # Only the legacy display constants are synthetic. Policy generation
+        # and validation run through the real checked-in modules.
+        topology_patch = patch.dict(sys.modules, {'new_topology': new_topology})
+        topology_patch.start()
+        self.addCleanup(topology_patch.stop)
+
     def test_server_routes_x_before_geographic_fallback(self):
+        self.assertEqual(server.X_SUFFIXES, X_SUFFIXES)
         contract = client_fixture.routing_contract()
         incoming = [{'tag': tag, 'users': []} for tag in
                     ('dmit-direct-stage', 'mobile-dmit-direct',
@@ -48,7 +55,7 @@ class XAiRouteTests(unittest.TestCase):
             with self.subTest(tag=tag):
                 matched = [(i, row) for i, row in enumerate(rules)
                            if row.get('inbound') == [tag]
-                           and row.get('domain_suffix') == list(server.X_SUFFIXES)]
+                           and row.get('domain_suffix') == list(X_SUFFIXES)]
                 self.assertEqual(len(matched), 1)
                 position, row = matched[0]
                 self.assertEqual(row['outbound'], target)
@@ -74,7 +81,7 @@ class XAiRouteTests(unittest.TestCase):
                     profile['rules'] = client_policy.simplified_rules(profile)
                     rendered = client_v4.project_profile(profile, **inputs)
                     ai = client_v4.GROUP_IDS['ai']
-                    for suffix in server.X_SUFFIXES:
+                    for suffix in X_SUFFIXES:
                         self.assertIn('DOMAIN-SUFFIX,' + suffix + ',' + ai, rendered['rules'])
                     youtube = 'DOMAIN-SUFFIX,youtube.com,' + client_v4.GROUP_IDS['other']
                     self.assertIn(youtube, rendered['rules'])
@@ -93,14 +100,19 @@ class XAiRouteTests(unittest.TestCase):
                                      'bytevirt-hk')
 
     def test_test_subscription_keeps_explicit_route_semantics(self):
-        profile, inputs = client_fixture.projection_inputs(kind='mobile', test_mode=True)
-        profile['rules'] = client_policy.simplified_rules(profile, test_mode=True)
-        rendered = client_v4.project_profile(profile, **inputs)
-        self.assertFalse(any(rule.startswith('DOMAIN-SUFFIX,' + suffix + ',')
-                             for suffix in server.X_SUFFIXES for rule in rendered['rules']))
-        groups = {row['name']: row for row in rendered['proxy-groups']}
-        self.assertEqual(groups[client_v4.GROUP_IDS['all']]['default-selected'],
-                         client_v4.ROUTE_LABELS['dmit'])
+        cutoff = routing_contract.UZUMA_HKT_RETIRE_AT
+        for kind in ('mobile', 'desktop', 'router'):
+            for epoch in (cutoff - 1, cutoff):
+                with self.subTest(kind=kind, epoch=epoch):
+                    profile, inputs = client_fixture.projection_inputs(
+                        kind=kind, as_of=epoch, test_mode=True)
+                    profile['rules'] = client_policy.simplified_rules(profile, test_mode=True)
+                    rendered = client_v4.project_profile(profile, **inputs)
+                    self.assertFalse(any(rule.startswith('DOMAIN-SUFFIX,' + suffix + ',')
+                                         for suffix in X_SUFFIXES for rule in rendered['rules']))
+                    groups = {row['name']: row for row in rendered['proxy-groups']}
+                    self.assertEqual(groups[client_v4.GROUP_IDS['all']]['default-selected'],
+                                     client_v4.ROUTE_LABELS['dmit'])
 
 
 if __name__ == '__main__':
